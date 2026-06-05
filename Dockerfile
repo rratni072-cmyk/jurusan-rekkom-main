@@ -1,9 +1,8 @@
 FROM php:8.2-apache
 
 RUN apt-get update && apt-get install -y \
-    zip unzip git curl libzip-dev
-
-RUN docker-php-ext-install pdo pdo_mysql zip
+    zip unzip git curl libzip-dev \
+    && docker-php-ext-install pdo pdo_mysql zip
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
@@ -19,4 +18,4 @@ RUN a2enmod rewrite
 
 EXPOSE 80
 
-CMD php artisan config:cache && apache2-foreground
+CMD ["apache2-foreground"]
