@@ -1,7 +1,4 @@
-FROM php:8.2-apache
-
-RUN a2dismod mpm_event
-RUN a2enmod mpm_prefork
+FROM php:8.2-cli
 
 RUN apt-get update && apt-get install -y \
     zip unzip git curl libzip-dev \
@@ -15,10 +12,6 @@ COPY . .
 
 RUN composer install --no-dev --optimize-autoloader
 
-RUN chown -R www-data:www-data storage bootstrap/cache
+EXPOSE 8080
 
-RUN a2enmod rewrite
-
-EXPOSE 80
-
-CMD ["apache2ctl", "-D", "FOREGROUND"]
+CMD php artisan serve --host=0.0.0.0 --port=8080
