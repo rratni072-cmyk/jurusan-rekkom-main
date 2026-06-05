@@ -14,8 +14,10 @@ RUN composer install --no-dev --optimize-autoloader
 
 RUN chown -R www-data:www-data storage bootstrap/cache
 
+RUN a2dismod mpm_event
+RUN a2enmod mpm_prefork
 RUN a2enmod rewrite
 
 EXPOSE 80
 
-CMD ["apache2-foreground"]
+CMD ["apache2ctl", "-D", "FOREGROUND"]
