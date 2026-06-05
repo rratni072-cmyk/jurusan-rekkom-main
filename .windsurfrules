@@ -1,0 +1,254 @@
+# Project Rules — Website Jurusan R&K
+
+> **MANDATORY READ**: File ini di-inject otomatis ke setiap conversation Cascade.
+> Detail lengkap setiap aturan ada di `.agents/rules/*.md` dan `.agents/workflows/*.md`.
+> **WAJIB baca file detail yang relevan SEBELUM melakukan eksekusi** (edit/create file, run command, dll).
+
+---
+
+## 0. PROTOKOL EKSEKUSI (NON-NEGOTIABLE)
+
+Setiap kali user meminta task non-trivial (bukan sekadar tanya), Cascade WAJIB:
+
+1. **BACA RULES YANG RELEVAN** di `.agents/rules/` sebelum mulai eksekusi:
+   - Fitur/CRUD baru → `arsitektur-proyek.md` + `kualitas-kode.md` + `keamanan.md` + `performance.md` + `activity-log.md` + workflow `new-feature.md`
+   - Debugging/bug → `skill-debugging.md` + `skill-verification.md`
+   - UI/desain → `desain-ui.md` + `responsive-mobile.md` + `library-standard.md` + `bahasa-indonesia.md` + `a11y.md`
+   - Mobile/responsive → `responsive-mobile.md` + `desain-ui.md` + `a11y.md`
+   - SEO/meta tags → `seo-meta.md` + `bahasa-indonesia.md`
+   - Library baru → `library-standard.md` + `tech-stack.md`
+   - File upload → `asset-management.md` + `keamanan.md` + `performance.md`
+   - Form / validasi → `validation-messages.md` + `bahasa-indonesia.md` + `keamanan.md`
+   - Blade refactor → `blade-components.md`
+   - Test → `testing-strategy.md` + `skill-verification.md`
+   - Deploy → `deployment.md`
+   - Git → `git-convention.md`
+   - Login testing → `akun-test.md`
+
+2. **IKUTI WORKFLOW** di `.agents/workflows/` jika task cocok:
+   - Bangun fitur baru → `new-feature.md`
+   - Verifikasi setelah selesai → `verify-feature.md` + `build-check.md`
+   - Cari referensi → `reference-old-project.md`
+   - Jalankan dev server → `dev-server.md`
+
+3. **GATE FUNCTION** — JANGAN PERNAH klaim "sudah selesai" tanpa bukti nyata (lihat `skill-verification.md`).
+
+4. **PINT WAJIB** — Setelah edit file PHP, jalankan `php vendor/laravel/pint/builds/pint <file>` sebelum klaim selesai.
+
+---
+
+## 1. PERSONA (`persona.md`)
+
+- **Senior Architect, Anti-Yes-Man** — sarankan alternatif jika instruksi user merusak kualitas
+- **Cek proyek lama** (`jurusanpolitani-main`) sebelum bangun fitur dari nol
+- **Konsistensi template**: Frontend = Eterna (Bootstrap 5), Admin = CoreUI
+- **JANGAN** mixing Tailwind + Bootstrap
+- **JANGAN** hardcode credential
+- **JANGAN** skip breadcrumb di halaman manapun
+
+## 2. ARSITEKTUR (`arsitektur-proyek.md`)
+
+```
+Routes → Middleware → Controller → Form Request → Repository → Model → DB
+```
+
+- Frontend views: `resources/views/frontend/` (extends `layouts.frontend`)
+- Admin views: `resources/views/admin/` (extends `layouts.admin`, middleware `auth`)
+- Repositories: `app/Repositories/`
+- Form Requests: `app/Http/Requests/{Frontend|Admin}/`
+
+## 3. TECH STACK (`tech-stack.md`)
+
+- **Laravel 12.x + PHP 8.2+ + MySQL 8.x + Bootstrap 5.3**
+- Backend wajib: `yajra/laravel-datatables-oracle`, `intervention/image-laravel`, `spatie/laravel-activitylog`, `laravel/breeze`
+- Admin only: jQuery (DataTables dependency), DataTables.js, **TinyMCE 7** (jQuery-free), **Tom Select** (jQuery-free), **SweetAlert2** (jQuery-free)
+- **DILARANG**: Tailwind, Summernote, Select2, jQuery di frontend, Vue/React, Livewire, Alpine.js
+
+## 4. KUALITAS KODE (`kualitas-kode.md`)
+
+- **`declare(strict_types=1);`** wajib di setiap file PHP baru
+- **PSR-12** — verify dengan `php vendor/laravel/pint/builds/pint --test`
+- **Controller ringan** (max 10-15 baris/method) — logic ke Repository/Service
+- **Form Request** terpisah `Store{Model}Request` & `Update{Model}Request`
+- **`$fillable` eksplisit** — JANGAN `$guarded = []`
+- **Activity Log** untuk setiap mutasi admin (create/update/delete)
+- **Naming**: Model PascalCase singular, Controller `XxxController`, Migration snake_case deskriptif, Variable camelCase, Table snake_case plural
+
+## 5. KEAMANAN (`keamanan.md`)
+
+- Auth via Laravel Breeze + middleware `auth` di route admin
+- **Form Request WAJIB** untuk validasi (jangan validasi di Controller)
+- **CSRF**: `@csrf` di form, `X-CSRF-TOKEN` header di AJAX
+- **File upload**: validasi `image|mimes:jpg,jpeg,png|max:2048`, simpan di `storage/app/public/`
+- **JANGAN** raw query tanpa parameter binding — gunakan Eloquent
+- **JANGAN** commit `.env`, gunakan `config()` BUKAN `env()` di kode
+
+## 6. LIBRARY (`library-standard.md`)
+
+Sebelum install library baru:
+1. Cek apakah benar-benar dibutuhkan (bisa pakai native Laravel?)
+2. Cek `library-standard.md` — apakah sudah dilarang?
+3. Cek via Context7 MCP untuk dokumentasi
+4. Pastikan support Laravel 12 + PHP 8.2+
+
+## 7. DESAIN UI (`desain-ui.md`)
+
+- **Frontend**: formal/profesional, navy `#1a2035` topbar/footer, blue `#0d6efd` accent
+- **Halaman konten**: 2-column dengan sidebar Artikel Terkini (col-md-8 + col-md-4)
+- **Wajib komponen frontend**: Topbar, Navbar dropdown, Breadcrumb, Sidebar Artikel, Footer 4-kolom, Back-to-Top
+- **Wajib komponen admin**: Sidebar, Header, Breadcrumb, SweetAlert2, DataTables
+
+## 8. DEBUGGING (`skill-debugging.md`)
+
+4-fase: **REPRODUCE → ISOLATE → FIX → VERIFY**. Cek `storage/logs/laravel.log` dulu, JANGAN tebak penyebab.
+
+## 9. VERIFICATION (`skill-verification.md`)
+
+JANGAN klaim "selesai" tanpa:
+- `php artisan test` pass
+- `php vendor/laravel/pint/builds/pint --test` pass
+- `php artisan route:list` — route benar
+- Screenshot/manual test di browser jika visual
+
+## 10. AKUN TEST (`akun-test.md`)
+
+- Email: `admin@rekkom.ac.id`
+- Password: `password`
+- URL: `http://localhost:8000/login`
+
+## 11. PERFORMANCE (`performance.md`)
+
+- Wajib `with(...)` untuk eager loading (anti N+1)
+- `select(...)` kolom tertentu untuk DataTable / list besar
+- `cache()->remember(...)` untuk data statis (kontak, slider)
+- `loading="lazy"` di setiap `<img>` non-hero
+- WAJIB `paginate(N)` — jangan `->get()` untuk halaman publik
+
+## 12. BAHASA INDONESIA (`bahasa-indonesia.md`)
+
+- `config/app.php`: `locale=id`, `timezone=Asia/Jakarta`
+- Tanggal pakai `->translatedFormat('d F Y')` → "1 Mei 2026"
+- Currency: `'Rp '.number_format($n, 0, ',', '.')` → "Rp 1.500.000"
+- Field labels Indonesia: "Judul", BUKAN "Title"
+- DB column name Indonesia: `judul`, `ringkasan`, `konten`
+- Validation messages WAJIB Indonesia (di Form Request `messages()` atau `lang/id/validation.php`)
+
+## 13. SEO & META (`seo-meta.md`)
+
+- Setiap halaman publik wajib `<title>`, `<meta description>`, `og:title`, `og:description`, `og:image`
+- `og:image` per berita (pakai gambar berita), fallback default logo
+- Meta description: 120-160 char, `strip_tags()` untuk HTML
+- Slug auto di model boot (lock at create, jangan auto-update)
+- 1x `<h1>` per halaman, hierarchy benar
+- Alt text WAJIB & descriptive
+- Sitemap.xml + robots.txt wajib production
+
+## 14. ACTIVITY LOG (`activity-log.md`)
+
+- Format: `[Aksi] [Modul]: [Identifier]` — e.g. "Tambah Berita: Workshop IoT"
+- Aksi standar: Tambah / Edit / Hapus / Upload / Login / Logout
+- Wajib `causedBy(auth()->user())` + `performedOn($model)` (jika applicable)
+- Pakai `withProperties()` untuk detail audit (path, IP, ukuran)
+
+## 15. ASSET MANAGEMENT (`asset-management.md`)
+
+- Lokasi: `storage/app/public/{module}/` (BUKAN `public/` langsung)
+- Naming: `{slug}-{random}.{ext}`
+- Dimensi standar: hero 1920x800, card 800x500, avatar 400x400
+- Auto-resize via Intervention Image (max 1600px width)
+- Cleanup file orphan saat delete model
+
+## 16. BLADE COMPONENTS (`blade-components.md`)
+
+- Pakai >2 tempat + butuh props → Blade Component (`<x-name>`)
+- Pakai >2 tempat tanpa props → Partial (`@include`)
+- Data dari DB di banyak halaman → View Composer
+- Max 2 level nested @include
+- JANGAN inline business logic di Blade (`@php` query)
+
+## 17. VALIDATION MESSAGES (`validation-messages.md`)
+
+- WAJIB Bahasa Indonesia
+- Tone formal, ramah ("Anda" bukan "kamu")
+- Hindari teknis ("DB error", stack trace)
+- Pesan sukses: "[Modul] berhasil ditambahkan/diperbarui/dihapus"
+- Konfirmasi hapus pakai SweetAlert2, BUKAN `alert()` native
+
+## 18. GIT CONVENTION (`git-convention.md`)
+
+- Branch: `feature/`, `fix/`, `refactor/`, `docs/`, `style/`
+- Commit: Conventional Commits (`feat:`, `fix:`, dll)
+- WAJIB `.gitignore` proper
+- JANGAN commit `.env`, `vendor/`, `node_modules/`, mockup HTML
+- Sebelum merge: pint + test pass + manual test
+
+## 19. TESTING STRATEGY (`testing-strategy.md`)
+
+- Pyramid: Unit > Feature > E2E
+- Lokasi: `tests/Unit/` & `tests/Feature/`
+- Factory wajib per Model
+- Pakai `RefreshDatabase` untuk Feature Test
+- Naming: `test_{actor}_{verb}_{object}`
+- Coverage target: 60% modul kritis
+
+## 20. DEPLOYMENT (`deployment.md`)
+
+- Pre-deploy: pint + test pass
+- `.env.production`: `APP_DEBUG=false`, `APP_ENV=production`
+- `composer install --no-dev --optimize-autoloader`
+- `npm run build` (BUKAN `npm run dev`)
+- `php artisan optimize` setelah deploy
+- Backup DB sebelum migrate
+- HTTPS wajib + security headers
+
+## 21. ACCESSIBILITY (`a11y.md`)
+
+- Target WCAG 2.1 Level AA
+- Semantic HTML (`<header>`, `<nav>`, `<main>`)
+- Alt text descriptive di setiap `<img>`
+- Keyboard navigation aktif (focus-visible)
+- Color contrast 4.5:1 (body text)
+- Heading hierarchy benar (1 h1 per halaman)
+- Form: `<label for="">` wajib
+
+## 22. RESPONSIVE & MOBILE (`responsive-mobile.md`)
+
+- **Mobile-first** — design dasar untuk mobile, escalate ke desktop dengan `@media (min-width: ...)`
+- Bootstrap breakpoints: `(none)`, `sm-` ≥576, `md-` ≥768 (tablet), `lg-` ≥992, `xl-` ≥1200
+- Pattern grid: `col-12 col-md-6 col-lg-4` (1→2→3 kolom)
+- **Touch target ≥44x44 px** untuk button & link (WCAG)
+- **Body text & input ≥16px** (cegah auto-zoom iOS)
+- Form input WAJIB: `type="email"`, `type="tel"`, `inputmode`, `autocomplete`
+- `:hover` HARUS punya pasangan `:focus-visible` (touch user)
+- Image: `class="img-fluid" loading="lazy"`
+- Tabel besar dibungkus `<div class="table-responsive">`
+- Hide/show: `d-none d-md-block` (kapan mobile vs desktop)
+- **WAJIB test di**: 375 px, 768 px, 1024 px, 1440 px
+- JANGAN `user-scalable=no` (block zoom = a11y violation)
+
+---
+
+## QUICK COMMANDS
+
+```powershell
+# Pint format (Windows path issue: pakai php langsung, BUKAN ./vendor/bin/pint)
+php vendor/laravel/pint/builds/pint <file>
+php vendor/laravel/pint/builds/pint --test  # check only
+
+# Test
+php artisan test
+
+# Cache clear (CSS/Blade tidak butuh ini, tapi route/config butuh)
+php artisan view:clear
+php artisan route:clear
+php artisan config:clear
+
+# Dev server
+php artisan serve  # port 8000
+```
+
+---
+
+## REMINDER UNTUK CASCADE
+
+Jika kamu tergoda untuk eksekusi tanpa baca rules dulu — STOP. Baca dulu file detail di `.agents/rules/` yang relevan. User sudah berkali-kali komplain tentang ini. Tidak ada toleransi untuk skip rules lagi.

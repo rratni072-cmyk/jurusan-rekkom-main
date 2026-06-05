@@ -1,0 +1,5125 @@
+/*
+|--------------------------------------------------------------------------
+| Custom Styles — Jurusan Rekayasa Komputer
+|--------------------------------------------------------------------------
+| Override CSS untuk menyesuaikan tampilan Eterna template
+| dengan branding Jurusan RK.
+| Referensi desain: TIK PNJ (tik.pnj.ac.id)
+|--------------------------------------------------------------------------
+*/
+
+/* ============================================================
+   COLOR VARIABLES
+   ============================================================ */
+:root {
+    --rk-primary: #1b2e4b;
+    --rk-primary-light: #2d5a8e;
+    --rk-accent: #1b6cb0;
+    --rk-accent-light: #3a8fd4;
+    --rk-gold: #f0a500;
+    --rk-text: #333333;
+    --rk-text-light: #6c757d;
+    --rk-bg-light: #f8f9fa;
+    --rk-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    --rk-shadow-hover: 0 12px 35px rgba(0, 0, 0, 0.15);
+    --rk-radius: 12px;
+}
+
+/* ============================================================
+   TOPBAR BIRU TUA
+   ============================================================ */
+.header .topbar.dark-background {
+    --background-color: var(--rk-primary) !important;
+    background-color: var(--rk-primary) !important;
+}
+
+/* ============================================================
+   NAVBAR PUTIH
+   ============================================================ */
+.header .branding {
+    background-color: #ffffff !important;
+    min-height: auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Logo brand: pakai <span> bukan <h1> (SEO: 1 h1 per page).
+   Mirror style Eterna `.header .logo h1` supaya visual tetap sama. */
+.header .logo .sitename {
+    display: inline-block;
+    padding: 0 0 0 8px;
+    margin: 11px 0;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-left: 8px solid var(--rk-accent);
+}
+
+.header .branding .sitename {
+    color: var(--rk-primary) !important;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Nav links gelap di navbar putih */
+.header .branding .navmenu a,
+.header .navmenu a,
+.navmenu a {
+    color: #444444 !important;
+}
+
+.header .branding .navmenu a:hover,
+.header .branding .navmenu a.active,
+.header .navmenu a:hover,
+.header .navmenu a.active,
+.navmenu a:hover,
+.navmenu a.active {
+    color: var(--rk-accent) !important;
+}
+
+/* Dropdown putih */
+.header .navmenu .dropdown ul {
+    background-color: #ffffff !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.header .navmenu .dropdown ul a {
+    color: #444444 !important;
+}
+
+.header .navmenu .dropdown ul a:hover {
+    color: var(--rk-accent) !important;
+    background-color: rgba(27, 108, 176, 0.06) !important;
+}
+
+/* Toggle dropdown icon gelap */
+.header .navmenu .toggle-dropdown {
+    color: #555555;
+}
+
+/* Mobile nav toggle gelap */
+.header .mobile-nav-toggle {
+    color: #333333;
+}
+
+/* ============================================================
+   PAGE TITLE BANNER (Inner Pages) — Referensi TIK PNJ
+   ============================================================ */
+.page-title {
+    position: relative;
+}
+
+.page-title .heading {
+    background: linear-gradient(135deg, var(--rk-primary) 0%, var(--rk-primary-light) 60%, var(--rk-accent) 100%);
+    padding: 70px 0 45px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative pattern overlay */
+.page-title .heading::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='m36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+    pointer-events: none;
+}
+
+/* Decorative circle accent */
+.page-title .heading::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.03);
+    top: -150px;
+    right: -50px;
+    pointer-events: none;
+}
+
+.page-title .heading h1 {
+    color: #ffffff !important;
+    font-weight: 800;
+    font-size: 2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+.page-title .heading p {
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-size: 1.05rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Breadcrumb strip */
+.page-title .breadcrumbs {
+    background-color: var(--rk-bg-light);
+    border-bottom: 1px solid #e9ecef;
+}
+
+.page-title .breadcrumbs ol {
+    padding: 12px 0;
+    margin: 0;
+}
+
+.page-title .breadcrumbs a {
+    color: var(--rk-accent);
+}
+
+.page-title .breadcrumbs .current {
+    color: var(--rk-text-light);
+}
+
+/* ============================================================
+   SIDEBAR — "Berita Terkini"
+   Konsolidasi: pakai pattern .sidebar-section + .sidebar-news-*
+   (lihat section ARTICLE SIDEBAR di bawah). Single source of truth
+   untuk widget berita-terbaru di partial sidebar-artikel.blade.php,
+   berita.show, dan kegiatan-show.
+   ============================================================ */
+.sidebar-lihat-semua {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--rk-accent);
+    font-weight: 600;
+    font-size: 0.88rem;
+    text-decoration: none !important;
+    margin-top: 12px;
+    transition: all 0.3s ease;
+}
+
+.sidebar-lihat-semua:hover {
+    color: var(--rk-primary);
+    gap: 10px;
+}
+
+/* ============================================================
+   CARDS — Global Hover Effects
+   ============================================================ */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--rk-shadow-hover) !important;
+}
+
+/* Halaman Profil, Jadwal, & Pedoman: card konten utama bersifat statis
+   (bukan link), sehingga efek lift on hover terasa misleading. Override
+   agar tidak ada transform/shadow change. Sidebar artikel terkini di
+   col-lg-4 tetap mempertahankan hover behavior aslinya karena clickable.
+   Halaman kegiatan & beasiswa TIDAK terdampak karena struktur col-lg-8
+   mereka bukan direct parent dari .card (pakai grid internal). */
+.profil-page .col-lg-8 > .card,
+.kemahasiswaan-page .col-lg-8 > .card {
+    transition: none;
+}
+
+.profil-page .col-lg-8 > .card:hover,
+.kemahasiswaan-page .col-lg-8 > .card:hover {
+    transform: none;
+    box-shadow: var(--bs-box-shadow-sm, 0 .125rem .25rem rgba(0, 0, 0, .075)) !important;
+}
+
+/* ============================================================
+   PROGRAM STUDI SECTION (Grid Layout — 3-per-row scalable)
+   ============================================================ */
+.prodi-section {
+    background: var(--rk-bg-light, #f8f9fa);
+}
+
+/* Card sebagai anchor — full clickable */
+.prodi-card {
+    background: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+}
+
+.prodi-card:hover,
+.prodi-card:focus-visible {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(26, 32, 53, 0.12);
+    border-color: var(--rk-accent);
+    color: inherit;
+    text-decoration: none;
+}
+
+.prodi-card:focus-visible {
+    outline: 3px solid var(--rk-accent);
+    outline-offset: 3px;
+}
+
+/* Image area */
+.prodi-card-img {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--rk-primary), var(--rk-accent));
+}
+
+.prodi-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.prodi-card:hover .prodi-card-img img {
+    transform: scale(1.05);
+}
+
+/* Thematic tile (no-image fallback) — gradient + icon per prodi */
+.prodi-card-tile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    isolation: isolate;
+}
+
+.prodi-card-tile::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.18) 0, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.12) 0, transparent 45%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.prodi-tile-icon {
+    position: relative;
+    z-index: 1;
+    font-size: 4.5rem;
+    color: rgba(255, 255, 255, 0.92);
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25));
+    transition: transform 0.4s ease;
+}
+
+.prodi-card:hover .prodi-tile-icon {
+    transform: scale(1.12) rotate(-4deg);
+}
+
+/* Jenjang badge top-right */
+.prodi-jenjang-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: var(--rk-gold);
+    color: var(--rk-primary);
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.3px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 2;
+}
+
+/* Card body */
+.prodi-card-body {
+    padding: 20px 18px 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.prodi-card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--rk-primary);
+    margin: 0 0 12px;
+    line-height: 1.35;
+    /* Truncate kalau nama terlalu panjang (max 2 baris) */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Akreditasi badge — color coded */
+.prodi-akreditasi {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    width: max-content;
+    max-width: 100%;
+}
+
+.prodi-akreditasi i {
+    font-size: 0.85rem;
+}
+
+.prodi-akreditasi.akreditasi-unggul {
+    background: #d1f4dc;
+    color: #146c43;
+}
+
+.prodi-akreditasi.akreditasi-baik-sekali {
+    background: #cfe2ff;
+    color: #084298;
+}
+
+.prodi-akreditasi.akreditasi-baik {
+    background: #fff3cd;
+    color: #664d03;
+}
+
+.prodi-akreditasi.akreditasi-default {
+    background: #e9ecef;
+    color: #495057;
+}
+
+/* Deskripsi singkat */
+.prodi-card-desc {
+    font-size: 0.88rem;
+    color: #6c757d;
+    line-height: 1.55;
+    margin-bottom: 16px;
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* CTA persistent (visible di mobile juga) */
+.prodi-card-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 14px;
+    background: var(--rk-accent);
+    color: #fff;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: background 0.25s ease;
+    margin-top: auto;
+}
+
+.prodi-card:hover .prodi-card-cta {
+    background: var(--rk-primary);
+}
+
+/* ===== MOBILE OPTIMIZATIONS ===== */
+@media (max-width: 768px) {
+    .prodi-card-img {
+        height: 160px;
+    }
+    .prodi-tile-icon {
+        font-size: 3.5rem;
+    }
+    .prodi-card-title {
+        font-size: 1rem;
+        min-height: auto;
+    }
+    .prodi-card-desc {
+        font-size: 0.85rem;
+    }
+    .prodi-card-cta {
+        font-size: 0.82rem;
+        padding: 10px 14px;
+        min-height: 44px;        /* WCAG touch target */
+    }
+}
+
+/* Breadcrumb parent kategori non-clickable
+   (Profil/Tridharma/Kemahasiswaan tidak punya halaman index dedicated).
+   Background section .breadcrumbs di Eterna terang, jadi pakai warna muted
+   yang readable namun visually distinct dari link aktif. */
+.breadcrumbs ol li .breadcrumb-disabled {
+    color: #6c757d;
+    cursor: default;
+    text-decoration: none;
+}
+
+/* ============================================================
+   KONTAK PAGE — Info Box Icon Override
+   ============================================================
+   Eterna main.css membuat icon punya background biru solid yang
+   menutup ikon-nya. Override agar ikon tampil bersih di bulatan
+   dengan border dotted accent. */
+.contact-page .contact .info-item i {
+    background: none !important;
+    color: var(--accent-color) !important;
+    width: 56px;
+    height: 56px;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 2px dotted color-mix(in srgb, var(--accent-color), transparent 40%);
+    margin-right: 0;
+}
+
+/* Spacing antar info-box di mobile (kalau gy-4 belum cukup) */
+@media (max-width: 768px) {
+    .contact-page .contact .info-item {
+        padding: 24px 16px;
+    }
+}
+
+/* Toast Flash Message — global frontend.
+   Position responsive: top-right di desktop, top-center full-width di mobile.
+   Z-index 1080 = di atas navbar (z-1030) + topbar tapi di bawah modal (z-1055
+   pakai Bootstrap default, kita pakai 1080 sedikit di atas).
+   Mobile: full-width minus margin agar pesan panjang tetap readable. */
+.toast-flash-container {
+    z-index: 1080;
+    top: 1rem;
+    right: 1rem;
+    pointer-events: none; /* container transparan, hanya toast yang interactive */
+}
+
+.toast-flash-container .toast {
+    pointer-events: auto;
+    min-width: 320px;
+    max-width: 420px;
+    background-color: #ffffff;
+}
+
+@media (max-width: 575.98px) {
+    .toast-flash-container {
+        top: 0.75rem;
+        right: 0.75rem;
+        left: 0.75rem;
+    }
+
+    .toast-flash-container .toast {
+        min-width: 0;
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+/* Map card — visual match dengan .php-email-form (bg surface + shadow halus).
+   Tanpa padding karena iframe harus fullsize di dalam card.
+   Equal-height ter-handle oleh parent: .row.align-items-stretch + .col.d-flex. */
+.contact-page .contact .contact-map-card {
+    background-color: var(--surface-color, #ffffff);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    min-height: 400px;
+    display: flex;
+}
+
+.contact-page .contact .contact-map-card iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    border: 0;
+    display: block;
+}
+
+/* Honeypot anti-bot: sembunyikan dari user, tapi tetap di-render di DOM
+   agar bot otomatis menemukan dan mengisi (yang menjadi sinyal spam).
+   Pakai teknik off-screen agar lebih reliable daripada display:none
+   yang sering di-skip oleh bot canggih. */
+.honeypot-field {
+    position: absolute !important;
+    left: -10000px !important;
+    top: auto !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+}
+
+/* Anchor scroll offset (untuk smart-link ke #prodi-{slug} di halaman akreditasi) */
+.akreditasi-row-anchor {
+    scroll-margin-top: 100px;
+}
+
+/* Highlight baris akreditasi saat jadi target anchor (visual feedback dari card prodi) */
+.akreditasi-row-anchor:target {
+    animation: prodi-target-flash 2.5s ease-out;
+}
+
+@keyframes prodi-target-flash {
+    0%   { background-color: rgba(255, 193, 7, 0.55); }
+    40%  { background-color: rgba(255, 193, 7, 0.35); }
+    100% { background-color: transparent; }
+}
+
+/* ============================================================
+   STATS COUNTER SECTION
+   ============================================================ */
+.stats-section {
+    background: var(--rk-bg-light);
+    padding: 60px 0;
+}
+
+.stats-item {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.stats-item .stats-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--rk-accent), var(--rk-accent-light));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    box-shadow: 0 8px 20px rgba(27, 108, 176, 0.25);
+}
+
+.stats-item .stats-icon i {
+    font-size: 1.8rem;
+    color: #ffffff;
+}
+
+.stats-item .purecounter {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--rk-primary);
+    display: block;
+    line-height: 1;
+    margin-bottom: 6px;
+}
+
+.stats-item p {
+    color: var(--rk-text-light);
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* ============================================================
+   BERITA SECTION (Homepage)
+   ============================================================ */
+.berita-section {
+    background: linear-gradient(180deg, #ffffff 0%, var(--rk-bg-light) 100%);
+}
+
+.berita-section .section-kicker {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--rk-accent);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.news-featured-card,
+.news-list-panel,
+.news-empty-state {
+    background: #ffffff;
+    border: 1px solid rgba(27, 46, 75, 0.08);
+    border-radius: var(--rk-radius);
+    box-shadow: var(--rk-shadow);
+}
+
+.news-featured-card {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border-top: 4px solid var(--rk-accent);
+}
+
+.news-featured-media {
+    display: block;
+    min-height: 295px;
+    overflow: hidden;
+    position: relative;
+}
+
+.news-featured-media img,
+.news-list-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.45s ease;
+}
+
+.news-featured-card:hover .news-featured-media img,
+.news-list-card:hover .news-list-image img {
+    transform: scale(1.05);
+}
+
+.news-featured-body {
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.news-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 12px;
+    margin-bottom: 12px;
+}
+
+.news-category {
+    display: inline-flex;
+    align-items: center;
+    color: #ffffff;
+    background: var(--rk-accent);
+    border-radius: 999px;
+    padding: 5px 11px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.news-category-muted {
+    background: var(--rk-text-light);
+}
+
+.news-date {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--rk-text-light);
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+.news-featured-body h3 {
+    color: var(--rk-primary);
+    font-size: 1.35rem;
+    font-weight: 800;
+    line-height: 1.35;
+    margin-bottom: 12px;
+}
+
+.news-featured-body h3 a,
+.news-list-content h4 a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.news-featured-body h3 a:hover,
+.news-list-content h4 a:hover {
+    color: var(--rk-accent);
+}
+
+.news-featured-body p,
+.news-list-content p,
+.news-empty-state p {
+    color: var(--rk-text-light);
+    line-height: 1.65;
+}
+
+.news-featured-body p {
+    margin-bottom: 22px;
+}
+
+.news-list-panel {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-list-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 16px;
+    margin-bottom: 18px;
+    border-bottom: 1px solid rgba(27, 46, 75, 0.08);
+}
+
+.news-list-header span {
+    color: var(--rk-accent);
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    line-height: 1;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+
+.news-list-header h3 {
+    color: var(--rk-primary);
+    font-size: 1.15rem;
+    font-weight: 800;
+    margin: 0;
+}
+
+.news-list-header a {
+    color: var(--rk-accent);
+    font-size: 0.86rem;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.news-list-items {
+    display: grid;
+    gap: 14px;
+}
+
+.news-list-card {
+    display: grid;
+    grid-template-columns: 132px 1fr;
+    gap: 16px;
+    align-items: stretch;
+    border: 1px solid rgba(27, 46, 75, 0.08);
+    border-radius: 12px;
+    padding: 12px;
+    transition: all 0.3s ease;
+}
+
+.news-list-card:hover {
+    border-color: rgba(27, 108, 176, 0.28);
+    box-shadow: 0 10px 26px rgba(27, 46, 75, 0.09);
+    transform: translateY(-2px);
+}
+
+.news-list-image {
+    display: block;
+    border-radius: 10px;
+    min-height: 112px;
+    overflow: hidden;
+}
+
+.news-list-content h4 {
+    color: var(--rk-primary);
+    font-size: 0.98rem;
+    font-weight: 800;
+    line-height: 1.38;
+    margin-bottom: 7px;
+}
+
+.news-list-content p {
+    font-size: 0.88rem;
+    margin-bottom: 0;
+}
+
+.news-section-footer {
+    text-align: center;
+    margin-top: 32px;
+}
+
+.news-empty-state {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 44px 28px;
+    text-align: center;
+}
+
+.news-empty-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: rgba(27, 108, 176, 0.1);
+    color: var(--rk-accent);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin-bottom: 18px;
+}
+
+.news-empty-state h3 {
+    color: var(--rk-primary);
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.berita-section .btn-selengkapnya {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--rk-accent);
+    font-weight: 600;
+    font-size: 0.88rem;
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+    margin-top: auto;
+}
+
+.berita-section .btn-selengkapnya:hover {
+    color: var(--rk-primary);
+    gap: 10px;
+}
+
+/* ============================================================
+   CTA POLITANI SECTION
+   ============================================================ */
+.cta-politani {
+    background: linear-gradient(135deg, var(--rk-primary) 0%, var(--rk-primary-light) 50%, var(--rk-accent) 100%);
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-politani::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='m36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+    pointer-events: none;
+}
+
+.cta-politani .logo-politani {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+}
+
+.cta-politani h2 {
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-politani p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.05rem;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-politani .btn-cta {
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    color: #ffffff;
+    padding: 12px 36px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-politani .btn-cta:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.cta-politani .btn-cta-primary {
+    background: var(--rk-gold);
+    border-color: var(--rk-gold);
+    color: var(--rk-primary);
+    padding: 12px 36px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-politani .btn-cta-primary:hover {
+    background: #e09500;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(240, 165, 0, 0.35);
+}
+
+/* ============================================================
+   FOOTER SOCIAL ICONS
+   ============================================================ */
+.footer.dark-background {
+    --background-color: var(--rk-primary);
+    --default-color: rgba(255, 255, 255, 0.86);
+    --heading-color: #ffffff;
+    --surface-color: rgba(255, 255, 255, 0.08);
+    background: linear-gradient(180deg, var(--rk-primary) 0%, #14243d 100%) !important;
+    border-top: 4px solid var(--rk-accent);
+}
+
+.footer .footer-top {
+    padding-top: 46px;
+}
+
+.footer h4,
+.footer .footer-about .sitename {
+    color: #ffffff !important;
+}
+
+.footer .footer-contact p,
+.footer .footer-contact span,
+.footer .credits,
+.footer p {
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.footer .footer-links ul a {
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.footer .footer-links ul a:hover {
+    color: var(--rk-gold);
+}
+
+.footer .footer-links ul i {
+    color: var(--rk-accent-light);
+}
+
+.footer .copyright {
+    border-top-color: rgba(255, 255, 255, 0.14);
+}
+
+footer .social-links a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    transition: all 0.3s ease;
+    color: #ffffff;
+}
+
+footer .social-links a:hover {
+    transform: translateY(-3px);
+}
+
+footer .social-links a .bi-facebook:before { color: #ffffff; }
+footer .social-links a:hover:has(.bi-facebook) { background: #1877f2; }
+
+footer .social-links a .bi-instagram:before { color: #ffffff; }
+footer .social-links a:hover:has(.bi-instagram) { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+
+footer .social-links a .bi-youtube:before { color: #ffffff; }
+footer .social-links a:hover:has(.bi-youtube) { background: #ff0000; }
+
+footer .social-links a .bi-tiktok:before { color: #ffffff; }
+footer .social-links a:hover:has(.bi-tiktok) { background: #010101; }
+
+footer .social-links a .bi-linkedin:before { color: #ffffff; }
+footer .social-links a:hover:has(.bi-linkedin) { background: #0077b5; }
+
+/* ============================================================
+   TABLE STYLING (Jadwal, Pedoman, Akreditasi)
+   ------------------------------------------------------------
+   Wrapper juga berperan sebagai .table-responsive:
+   - overflow-x: auto  → izinkan scroll horizontal di tablet sempit
+   - overflow-y: hidden → rounded corner tetap rapi
+   Halaman akreditasi punya card list khusus di mobile (<768px),
+   jadi scroll horizontal hanya fallback untuk tabel lain.
+   ============================================================ */
+.table-styled-wrapper {
+    border-radius: var(--rk-radius);
+    overflow-x: auto;
+    overflow-y: hidden;
+    box-shadow: var(--rk-shadow);
+    -webkit-overflow-scrolling: touch;  /* momentum scroll di iOS */
+}
+
+.table-styled-wrapper .table {
+    margin-bottom: 0;
+}
+
+.table-styled-wrapper .table thead {
+    background: var(--rk-primary, #002147) !important;
+}
+
+.table-styled-wrapper .table thead th {
+    color: #ffffff !important;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.85rem 0.75rem;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    background: transparent !important;
+}
+
+.table-styled-wrapper .table tbody td {
+    padding: 1rem 0.75rem;
+    vertical-align: middle;
+    font-size: 0.9rem;
+    border: 1px solid #dee2e6;
+}
+
+/* Zebra striping — baris genap diberi warna abu-abu muda (match tabel-struktur-organisasi). */
+.table-styled-wrapper .table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.table-styled-wrapper .table tbody tr:hover {
+    background-color: #eef4fb;
+    transition: background 0.15s ease-in-out;
+}
+
+/* Kolom Tautan — stack vertikal: Sertifikat + Verifikasi.
+   Pakai link inline-flex agar icon + label rapi sejajar. */
+.akreditasi-tautan {
+    text-align: left;
+    padding: 0.5rem 0.75rem !important;
+}
+
+.akreditasi-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 4px 8px;
+    font-size: 0.825rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 6px;
+    line-height: 1.3;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.akreditasi-link + .akreditasi-link {
+    margin-top: 4px;
+}
+
+.akreditasi-link i {
+    font-size: 0.95rem;
+    flex-shrink: 0;
+}
+
+.akreditasi-link--sertifikat {
+    color: var(--rk-accent, #1b6cb0);
+}
+
+.akreditasi-link--sertifikat:hover {
+    background: rgba(27, 108, 176, 0.08);
+    color: var(--rk-primary, #002147);
+}
+
+/* Verifikasi link — accent ungu/info supaya beda dari sertifikat,
+   menandakan tautan EKSTERNAL ke situs resmi (PDDikti/BAN-PT). */
+.akreditasi-link--verifikasi {
+    color: #6366f1;   /* indigo, beda dari biru aksen utama */
+}
+
+.akreditasi-link--verifikasi:hover {
+    background: rgba(99, 102, 241, 0.08);
+    color: #4f46e5;
+}
+
+.akreditasi-link-extern {
+    font-size: 0.7rem !important;
+    opacity: 0.6;
+    margin-left: 2px;
+}
+
+/* Badge "Resmi" — small chip indicating government data source.
+   Subtle indigo background match link color, but distinct enough to draw eye. */
+.akreditasi-link-badge {
+    font-size: 0.62rem !important;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    padding: 1px 5px;
+    background: rgba(99, 102, 241, 0.15);
+    color: #4f46e5;
+    border-radius: 3px;
+    line-height: 1.4;
+}
+
+/* ============================================================
+   JADWAL PERKULIAHAN — Year Tabs (PDDikti-style, scalable)
+   ------------------------------------------------------------
+   Pattern institusional dengan tab navigation per tahun ajaran:
+   - Scalable: horizontal scroll tabs dengan prev/next buttons
+   - Mobile: native swipe + scroll snap
+   - Per-tab: filter semester + search independent
+   - Patuh performance-css.md: hover di-wrap @media (hover: hover),
+     transition hanya pada color/background-color (no layout shift).
+   ============================================================ */
+
+/* === 1. Tabs wrapper (positioning context untuk scroll buttons + fade) === */
+.jadwal-tabs-wrapper {
+    position: relative;
+    margin-bottom: 0;
+}
+
+/* Gradient fade indicators — visual cue ada overflow */
+.jadwal-tabs-wrapper::before,
+.jadwal-tabs-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 2px; /* exclude border-bottom dari area fade */
+    width: 32px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: 1;
+}
+.jadwal-tabs-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, var(--bs-body-bg), transparent);
+}
+.jadwal-tabs-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, var(--bs-body-bg), transparent);
+}
+.jadwal-tabs-wrapper.has-prev::before { opacity: 1; }
+.jadwal-tabs-wrapper.has-next::after  { opacity: 1; }
+
+/* === 2. Scrollable tab strip === */
+.jadwal-tabs-scroll {
+    display: flex;
+    gap: 0;
+    border-bottom: 2px solid var(--rk-primary, #002147);
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none; /* firefox */
+    -ms-overflow-style: none; /* IE/Edge legacy */
+    padding: 0 0.5rem;
+    /* Drag-to-scroll: cursor grab di desktop, normal di touch device */
+    cursor: grab;
+    user-select: none;
+    -webkit-user-select: none;
+}
+.jadwal-tabs-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+/* State saat user sedang drag — feedback visual + matikan smooth scroll
+   agar respons drag instan, dan disable scroll-snap supaya tidak melawan drag. */
+.jadwal-tabs-scroll.is-dragging {
+    cursor: grabbing;
+    scroll-behavior: auto;
+    scroll-snap-type: none;
+}
+
+/* Touch device tidak butuh cursor grab (akan terlihat aneh) */
+@media (hover: none) {
+    .jadwal-tabs-scroll {
+        cursor: default;
+    }
+}
+
+/* === 3. Individual tab button === */
+.jadwal-tab {
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    background: transparent;
+    border: 0;
+    padding: 10px 18px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--bs-secondary-color);
+    cursor: pointer;
+    position: relative;
+    white-space: nowrap;
+    transition: color 0.15s ease, background-color 0.15s ease;
+    line-height: 1.4;
+}
+
+@media (hover: hover) {
+    .jadwal-tab:hover:not(.is-active) {
+        color: var(--rk-accent, #1b6cb0);
+        background: rgba(27, 108, 176, 0.05);
+    }
+}
+
+.jadwal-tab:focus-visible {
+    outline: 2px solid var(--rk-accent, #1b6cb0);
+    outline-offset: -2px;
+    border-radius: 4px;
+}
+
+.jadwal-tab.is-active {
+    background: var(--rk-primary, #002147);
+    color: #fff;
+    border-radius: 8px 8px 0 0;
+}
+
+/* Badge di dalam tab */
+.jadwal-tab .badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    line-height: 1;
+}
+.jadwal-badge-active   { background: #ffffff; color: var(--rk-primary, #002147); }
+.jadwal-badge-inactive { background: var(--bs-secondary-bg); color: var(--bs-secondary-color); }
+
+/* === 4. Scroll prev/next buttons (desktop only) === */
+.jadwal-scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 32px;
+    height: 32px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: var(--bs-body-bg);
+    border: 1px solid var(--bs-border-color);
+    border-radius: 50%;
+    color: var(--rk-primary, #002147);
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+.jadwal-scroll-btn.visible { display: inline-flex; }
+.jadwal-scroll-prev { left: -8px; }
+.jadwal-scroll-next { right: -8px; }
+
+@media (hover: hover) {
+    .jadwal-scroll-btn:hover {
+        background: var(--rk-primary, #002147);
+        color: #fff;
+        border-color: var(--rk-primary, #002147);
+    }
+}
+
+.jadwal-scroll-btn:focus-visible {
+    outline: 2px solid var(--rk-accent, #1b6cb0);
+    outline-offset: 2px;
+}
+
+/* === 5. Tab panel — content area per tahun === */
+.jadwal-tab-panel {
+    padding-top: 1rem;
+    /* Transisi halus saat berpindah tab (PDDikti-style) */
+    transition: opacity 0.22s ease-out, transform 0.22s ease-out;
+    will-change: opacity, transform;
+}
+
+/* State saat panel SEDANG keluar (tab lama) — fade ke bawah */
+.jadwal-tab-panel.is-leaving {
+    opacity: 0;
+    transform: translateY(8px);
+    pointer-events: none;
+}
+
+/* State saat panel BARU MASUK (sebelum frame transisi) — fade dari atas */
+.jadwal-tab-panel.is-entering {
+    opacity: 0;
+    transform: translateY(-8px);
+}
+
+/* Hormati prefers-reduced-motion: matikan animasi untuk user yang prefer no motion */
+@media (prefers-reduced-motion: reduce) {
+    .jadwal-tab-panel,
+    .jadwal-tab-panel.is-leaving,
+    .jadwal-tab-panel.is-entering {
+        transition: none;
+        transform: none;
+    }
+}
+
+/* === 6. Semester toolbar (di dalam tab panel) === */
+.jadwal-semester-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--bs-border-color);
+    margin-bottom: 1rem;
+}
+
+/* Toggle group Semester (Semua/Ganjil/Genap) */
+.jadwal-semester-group {
+    display: inline-flex;
+    border: 1px solid var(--bs-border-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+.jadwal-semester-group button {
+    background: var(--bs-body-bg);
+    border: 0;
+    padding: 6px 16px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--bs-body-color);
+    cursor: pointer;
+    border-right: 1px solid var(--bs-border-color);
+    transition: background-color 0.15s ease, color 0.15s ease;
+    line-height: 1.4;
+}
+.jadwal-semester-group button:last-child {
+    border-right: 0;
+}
+.jadwal-semester-group button.is-active {
+    background: var(--rk-primary, #002147);
+    color: #fff;
+}
+
+@media (hover: hover) {
+    .jadwal-semester-group button:hover:not(.is-active) {
+        background: var(--bs-tertiary-bg);
+    }
+}
+
+.jadwal-semester-group button:focus-visible {
+    outline: 2px solid var(--rk-accent, #1b6cb0);
+    outline-offset: -2px;
+    z-index: 1;
+    position: relative;
+}
+
+/* Search input (di dalam toolbar) */
+.jadwal-search-input {
+    max-width: 240px;
+}
+
+/* === 7. Mobile responsive: stack toolbar vertikal di <576px === */
+@media (max-width: 575.98px) {
+    .jadwal-semester-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+    .jadwal-semester-group {
+        width: 100%;
+    }
+    .jadwal-semester-group button {
+        flex: 1;
+        text-align: center;
+        padding: 8px 12px;
+    }
+    .jadwal-search-input {
+        max-width: 100%;
+    }
+}
+
+/* === 8. Info banner (periode aktif) === */
+.jadwal-info-banner {
+    background: rgba(27, 108, 176, 0.08);
+    color: var(--rk-primary, #002147);
+}
+.jadwal-info-banner i {
+    color: #198754;
+}
+
+/* === 9. Mobile card list === */
+.jadwal-mobile-list {
+    margin-top: 0.5rem;
+}
+.jadwal-mobile-card {
+    padding: 0.875rem;
+    background: var(--bs-body-bg);
+    border: 1px solid var(--bs-border-color);
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+}
+.jadwal-mobile-card:last-child {
+    margin-bottom: 0;
+}
+
+/* === 10. Hover row tabel (desktop) — hanya mouse device === */
+@media (hover: hover) {
+    .jadwal-table tbody tr:hover {
+        background-color: var(--bs-tertiary-bg);
+    }
+}
+
+/* === 11. Touch target: tombol Unduh di mobile ≥44px === */
+@media (max-width: 575.98px) {
+    .jadwal-mobile-card .btn-primary {
+        min-height: 44px;
+    }
+    .jadwal-tab {
+        padding: 8px 14px;
+        font-size: 0.78rem;
+    }
+}
+
+/* ============================================================
+   AKREDITASI — MOBILE CARD LIST (<768px)
+   ------------------------------------------------------------
+   Pada viewport sempit, tabel 7-kolom sulit dibaca meski di-scroll
+   horizontal. Kita pakai layout card vertikal yang stack konten
+   per prodi — pattern modern ala PDDikti/GitHub/Stripe.
+   ============================================================ */
+.akreditasi-mobile-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.akreditasi-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: var(--rk-radius, 12px);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    scroll-margin-top: 90px;  /* anchor target visibility */
+}
+
+.akreditasi-card-header {
+    background: linear-gradient(135deg, var(--rk-primary, #002147) 0%, var(--rk-accent, #1b6cb0) 100%);
+    color: #ffffff;
+    padding: 0.875rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+}
+
+.akreditasi-card-jenjang {
+    flex-shrink: 0;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    padding: 3px 9px;
+    background: var(--rk-gold, #f5b400);
+    color: var(--rk-primary, #002147);
+    border-radius: 999px;
+}
+
+.akreditasi-card-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0;
+    color: #ffffff;
+    line-height: 1.35;
+}
+
+.akreditasi-card-body {
+    margin: 0;
+    padding: 0.25rem 1rem;
+}
+
+.akreditasi-row {
+    display: grid;
+    grid-template-columns: 7.5rem 1fr;
+    gap: 0.5rem;
+    padding: 0.625rem 0;
+    border-bottom: 1px solid #f3f4f6;
+    align-items: start;
+}
+
+.akreditasi-row:last-child {
+    border-bottom: 0;
+}
+
+.akreditasi-row dt {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #6b7280;
+    margin: 0;
+}
+
+.akreditasi-row dd {
+    font-size: 0.88rem;
+    color: #111827;
+    margin: 0;
+    word-break: break-word;
+}
+
+/* Container stack: 2 actions (sertifikat + verifikasi) tampil sebagai baris-baris */
+.akreditasi-card-actions {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #e5e7eb;
+}
+
+.akreditasi-card-action {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: #f8fafc;
+    color: var(--rk-accent, #1b6cb0);
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    min-height: 44px;    /* WCAG touch target */
+    transition: background 0.15s ease;
+}
+
+.akreditasi-card-action + .akreditasi-card-action {
+    border-top: 1px solid #e5e7eb;
+}
+
+.akreditasi-card-action:active,
+.akreditasi-card-action:focus-visible {
+    background: #eef4fb;
+    color: var(--rk-primary, #002147);
+}
+
+/* Variant verifikasi — accent indigo, sama dengan kolom desktop */
+.akreditasi-card-action--verifikasi {
+    color: #6366f1;
+}
+
+/* Mobile badge "Resmi" — sama style dengan desktop, sedikit lebih besar untuk readability */
+.akreditasi-card-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    padding: 2px 6px;
+    background: rgba(99, 102, 241, 0.15);
+    color: #4f46e5;
+    border-radius: 3px;
+    line-height: 1.4;
+}
+
+.akreditasi-card-action--verifikasi:active,
+.akreditasi-card-action--verifikasi:focus-visible {
+    background: rgba(99, 102, 241, 0.08);
+    color: #4f46e5;
+}
+
+@media (hover: hover) {
+    .akreditasi-card-action:hover {
+        background: #eef4fb;
+    }
+    .akreditasi-card-action--verifikasi:hover {
+        background: rgba(99, 102, 241, 0.08);
+        color: #4f46e5;
+    }
+}
+
+/* ============================================================
+   KONTAK PAGE
+   ============================================================ */
+.info-wrap {
+    background: #ffffff;
+    border-radius: var(--rk-radius);
+    padding: 28px;
+    box-shadow: var(--rk-shadow);
+    border-top: 4px solid var(--rk-accent);
+}
+
+.info-item i {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--rk-accent), var(--rk-accent-light));
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    margin-right: 16px;
+    flex-shrink: 0;
+}
+
+.info-item h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--rk-primary);
+    margin-bottom: 4px;
+}
+
+.info-item p {
+    font-size: 0.9rem;
+    color: var(--rk-text-light);
+    margin-bottom: 0;
+}
+
+.info-item p a {
+    color: var(--rk-accent);
+    text-decoration: none;
+}
+
+.info-item p a:hover {
+    text-decoration: underline;
+}
+
+/* ============================================================
+   BEASISWA CARDS — Layout D: Hybrid Compact + CTA
+   - 2-col grid desktop, 1-col stack mobile
+   - Horizontal card: icon mark (36px) + body (title/subtitle/desc/CTA)
+   - Border-left color: biru = eksternal (URL), abu = internal (fallback)
+   - Description di-clamp 2 baris untuk konsistensi tinggi card
+   ============================================================ */
+.beasiswa-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+}
+@media (min-width: 576px) {
+    .beasiswa-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.beasiswa-card {
+    background: #fff;
+    border: 1px solid var(--bs-border-color, #e5e7eb);
+    border-left: 4px solid var(--rk-accent, #0d6efd);
+    border-radius: 8px;
+    padding: 0.95rem 1rem;
+    display: flex;
+    gap: 0.85rem;
+    align-items: flex-start;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+.beasiswa-card.is-internal {
+    border-left-color: var(--bs-secondary-color, #6c757d);
+}
+
+@media (hover: hover) {
+    .beasiswa-card:hover {
+        border-color: var(--rk-accent, #0d6efd);
+        border-left-color: var(--rk-accent, #0d6efd);
+        box-shadow: 0 4px 12px rgba(13, 110, 253, 0.08);
+    }
+}
+
+.beasiswa-card:focus-within {
+    border-color: var(--rk-accent, #0d6efd);
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15);
+}
+
+/* Icon mark — visual cue + color state (biru eksternal / abu internal) */
+.beasiswa-card .beasiswa-mark {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: rgba(13, 110, 253, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--rk-accent, #0d6efd);
+    font-size: 1.05rem;
+}
+.beasiswa-card.is-internal .beasiswa-mark {
+    background: rgba(108, 117, 125, 0.08);
+    color: var(--bs-secondary-color, #6c757d);
+}
+
+.beasiswa-card .beasiswa-body {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+/* Title — nama beasiswa */
+.beasiswa-card .beasiswa-title {
+    margin: 0 0 0.15rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--rk-primary, #1a2035);
+    line-height: 1.35;
+}
+
+/* Penyelenggara subtitle — nama lembaga (warna ikut state card) */
+.beasiswa-card .beasiswa-penyelenggara {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--rk-accent, #0d6efd);
+    margin: 0 0 0.5rem;
+    line-height: 1.4;
+}
+.beasiswa-card.is-internal .beasiswa-penyelenggara {
+    color: var(--bs-secondary-color, #6c757d);
+}
+
+/* Description — clamp 2 baris supaya antar-card konsisten tinggi */
+.beasiswa-card .beasiswa-desc {
+    font-size: 0.85rem;
+    line-height: 1.55;
+    color: var(--bs-body-color, #495057);
+    margin: 0 0 0.7rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* CTA — text link inline (bukan button "berisik"), touch-friendly 32px min */
+.beasiswa-card .beasiswa-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--rk-accent, #0d6efd);
+    min-height: 32px;
+    transition: color 0.15s ease;
+}
+.beasiswa-card .beasiswa-cta:hover,
+.beasiswa-card .beasiswa-cta:focus-visible {
+    text-decoration: underline;
+    outline: 0;
+}
+.beasiswa-card.is-internal .beasiswa-cta {
+    color: var(--bs-secondary-color, #6c757d);
+}
+
+/* Empty state */
+.beasiswa-empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    border: 2px dashed var(--bs-border-color, #e5e7eb);
+    border-radius: 10px;
+    color: var(--bs-secondary-color, #6c757d);
+}
+.beasiswa-empty i {
+    display: block;
+    font-size: 2.5rem;
+    opacity: 0.4;
+    margin-bottom: 0.75rem;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .beasiswa-card,
+    .beasiswa-card .beasiswa-cta {
+        transition: none !important;
+    }
+}
+
+/* ============================================================
+   PAGE TOOLBAR (Search + Filter wrapper)
+   Reusable di Kegiatan, Pengajaran, Pengabdian.
+   - Light bg, subtle border
+   - Sticky-friendly (no fixed height yang bermasalah di mobile)
+   - Touch target 44px untuk input + select
+   ============================================================ */
+.page-toolbar {
+    background: var(--bs-light, #f8f9fa);
+    border: 1px solid var(--bs-border-color, #e5e7eb);
+    border-radius: 8px;
+    padding: 0.85rem 0.95rem;
+}
+
+.page-toolbar .form-control,
+.page-toolbar .form-select {
+    min-height: 44px;
+    font-size: 0.95rem;
+}
+
+.page-toolbar .input-group-text {
+    background: #fff;
+    color: var(--bs-secondary-color, #6c757d);
+    border-right: 0;
+}
+
+.page-toolbar .input-group .form-control {
+    border-left: 0;
+}
+
+.page-toolbar .input-group .form-control:focus {
+    border-color: var(--rk-accent, #0d6efd);
+    box-shadow: none;
+}
+
+.page-toolbar .input-group:focus-within .input-group-text {
+    border-color: var(--rk-accent, #0d6efd);
+}
+
+.page-toolbar-reset {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--bs-secondary-color, #6c757d);
+    text-decoration: none;
+}
+.page-toolbar-reset:hover,
+.page-toolbar-reset:focus-visible {
+    color: var(--rk-accent, #0d6efd);
+    text-decoration: underline;
+}
+
+/* ============================================================
+   EVENT CARD (Halaman Kegiatan) — Compact Horizontal
+   - Pattern mirror SS PBL lama: thumb 80px + title + date + excerpt
+   - 2-col grid di ≥md, stack 1-col di <md
+   - Border-left subtle untuk visual cue (tetap compact)
+   ============================================================ */
+.event-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+}
+@media (min-width: 768px) {
+    .event-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.event-card {
+    background: #fff;
+    border: 1px solid var(--bs-border-color, #e5e7eb);
+    border-radius: 8px;
+    padding: 0.75rem;
+    display: flex;
+    gap: 0.85rem;
+    align-items: flex-start;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+@media (hover: hover) {
+    .event-card:hover {
+        border-color: var(--rk-accent, #0d6efd);
+        box-shadow: 0 4px 12px rgba(13, 110, 253, 0.06);
+    }
+}
+
+.event-card:focus-within {
+    border-color: var(--rk-accent, #0d6efd);
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.12);
+}
+
+/* Thumbnail — fixed 80px square, object-fit cover */
+.event-card .event-thumb {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    border-radius: 6px;
+    overflow: hidden;
+    background: var(--bs-light, #f8f9fa);
+}
+.event-card .event-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.event-card .event-thumb-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--bs-secondary-color, #6c757d);
+    font-size: 1.5rem;
+    background: linear-gradient(135deg, #eef2f7, #e2e8f0);
+}
+
+/* Body — flex 1 supaya menyesuaikan thumbnail */
+.event-card .event-body {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+/* Cursor pointer di seluruh area card karena ada stretched-link */
+.event-card { cursor: pointer; }
+
+/* Link di dalam title pakai color inherit + transition smooth */
+.event-card .event-title a {
+    color: var(--rk-primary, #1a2035);
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+.event-card .event-title a:hover,
+.event-card .event-title a:focus-visible {
+    color: var(--rk-accent, #0d6efd);
+}
+
+/* Title — clamp 2 baris untuk konsistensi tinggi card */
+.event-card .event-title {
+    margin: 0 0 0.3rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--rk-primary, #1a2035);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Date — kecil, abu, dengan icon kalender */
+.event-card .event-date {
+    margin: 0 0 0.3rem;
+    font-size: 0.78rem;
+    color: var(--bs-secondary-color, #6c757d);
+    line-height: 1.3;
+}
+
+/* Excerpt — clamp 1 baris, hide di card kecil */
+.event-card .event-excerpt {
+    margin: 0;
+    font-size: 0.82rem;
+    color: var(--bs-body-color, #495057);
+    line-height: 1.45;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Mobile: thumb sedikit lebih kecil supaya text punya ruang */
+@media (max-width: 575.98px) {
+    .event-card .event-thumb {
+        width: 64px;
+        height: 64px;
+    }
+    .event-card .event-excerpt {
+        display: none; /* hide excerpt di HP, fokus title + date */
+    }
+}
+
+/* Empty state */
+.event-empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    border: 2px dashed var(--bs-border-color, #e5e7eb);
+    border-radius: 10px;
+    color: var(--bs-secondary-color, #6c757d);
+}
+.event-empty i {
+    display: block;
+    font-size: 2.5rem;
+    opacity: 0.4;
+    margin-bottom: 0.75rem;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .event-card { transition: none !important; }
+}
+
+/* Event Tag (Tipe Kegiatan) — pill kecil di card untuk klasifikasi tipe.
+   Workshop / Seminar / Lomba / Kunjungan / HIMA / Akademik. Pakai 1 warna
+   biru aksen + icon Bootstrap berbeda untuk anti-AI vibe (no rainbow). */
+.event-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: rgba(13, 110, 253, 0.08);
+    color: var(--rk-accent, #0d6efd);
+    font-size: 0.68rem;
+    font-weight: 600;
+    padding: 0.12rem 0.5rem;
+    border-radius: 100px;
+    border: 1px solid rgba(13, 110, 253, 0.18);
+    margin-bottom: 0.35rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    line-height: 1.3;
+}
+.event-tag i { font-size: 0.85em; }
+
+/* ============================================================
+   TEACHING CARD (Halaman Pengajaran) — Horizontal Compact
+   Pattern: image kiri 180×180 + content kanan dense
+   Vibe: arsip artikel akademik, scannable, scholarly, text-first
+   ============================================================ */
+.teaching-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.teaching-card {
+    background: #fff;
+    border: 1px solid var(--bs-border-color, #e5e7eb);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+@media (hover: hover) {
+    .teaching-card:hover {
+        border-color: var(--rk-accent, #0d6efd);
+        box-shadow: 0 4px 14px rgba(13, 110, 253, 0.06);
+    }
+}
+
+.teaching-card:focus-within {
+    border-color: var(--rk-accent, #0d6efd);
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.12);
+}
+
+.teaching-card .teaching-image {
+    flex: 0 0 180px;
+    height: 180px;
+    background: #f0f2f5;
+    overflow: hidden;
+    position: relative;
+    display: block;
+    text-decoration: none;
+}
+
+.teaching-card .teaching-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.teaching-card .teaching-image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #adb5bd;
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, #eef2f7, #dde4ec);
+}
+
+.teaching-card .teaching-body {
+    flex: 1 1 0;
+    padding: 1rem 1.15rem;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.teaching-card .teaching-tags {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+}
+
+.teaching-card .teaching-tag {
+    background: rgba(13, 110, 253, 0.08);
+    color: var(--rk-accent, #0d6efd);
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0.15rem 0.5rem;
+    border-radius: 100px;
+    border: 1px solid rgba(13, 110, 253, 0.18);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+/* Tag varian Prodi — navy solid untuk identifikasi prodi */
+.teaching-card .teaching-tag--prodi {
+    background: var(--rk-primary, #1a2035);
+    color: #fff;
+    border-color: var(--rk-primary, #1a2035);
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+.teaching-card .teaching-tag--prodi i { font-size: 0.85em; }
+
+.teaching-card .teaching-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--rk-primary, #1a2035);
+    line-height: 1.35;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.teaching-card .teaching-title a { color: inherit; text-decoration: none; }
+.teaching-card .teaching-title a:hover,
+.teaching-card .teaching-title a:focus-visible { color: var(--rk-accent, #0d6efd); }
+
+.teaching-card .teaching-meta {
+    font-size: 0.76rem;
+    color: var(--bs-secondary-color, #6c757d);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin: 0;
+}
+.teaching-card .teaching-meta-item { display: inline-flex; align-items: center; gap: 0.3rem; }
+.teaching-card .teaching-meta-item.author { color: var(--rk-primary, #1a2035); font-weight: 500; }
+
+.teaching-card .teaching-excerpt {
+    font-size: 0.86rem;
+    color: var(--bs-body-color, #495057);
+    line-height: 1.55;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.teaching-card .teaching-cta {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--rk-accent, #0d6efd);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-top: auto;
+    align-self: flex-start;
+}
+.teaching-card .teaching-cta:hover,
+.teaching-card .teaching-cta:focus-visible { text-decoration: underline; }
+
+/* Mobile: stack vertikal — image atas full-width 16:9 */
+@media (max-width: 575.98px) {
+    .teaching-card { flex-direction: column; }
+    .teaching-card .teaching-image {
+        flex: none;
+        width: 100%;
+        aspect-ratio: 16/9;
+        height: auto;
+    }
+}
+
+.teaching-empty {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    border: 2px dashed var(--bs-border-color, #e5e7eb);
+    border-radius: 10px;
+    color: var(--bs-secondary-color, #6c757d);
+}
+.teaching-empty i {
+    display: block;
+    font-size: 2.5rem;
+    opacity: 0.4;
+    margin-bottom: 0.75rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .teaching-card { transition: none !important; }
+}
+
+/* ============================================================
+   BERITA INDEX CARD (Halaman /berita) — Editorial Horizontal Card
+   Pattern: thumbnail kiri 200px + body kanan (meta, title, excerpt, footer).
+   Konvensi portal berita kampus modern (IPB, UGM, ITB).
+   Mobile: stack vertikal dgn thumbnail aspect 16:9.
+   ============================================================ */
+.berita-index-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.berita-index-card {
+    background: #fff;
+    border: 1px solid var(--bs-border-color, #e5e7eb);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: stretch;
+    transition: border-color 0.18s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+@media (hover: hover) {
+    .berita-index-card:hover {
+        border-color: var(--rk-accent, #0d6efd);
+        box-shadow: 0 6px 18px rgba(13, 110, 253, 0.08);
+        transform: translateY(-2px);
+    }
+}
+
+.berita-index-card:focus-within {
+    border-color: var(--rk-accent, #0d6efd);
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.12);
+}
+
+.berita-index-card-image {
+    flex: 0 0 200px;
+    height: 160px;
+    background: #f0f2f5;
+    overflow: hidden;
+    display: block;
+    text-decoration: none;
+    position: relative;
+}
+
+.berita-index-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+@media (hover: hover) {
+    .berita-index-card:hover .berita-index-card-image img {
+        transform: scale(1.05);
+    }
+}
+
+/* Saat fallback (no gambar) — pakai gradient + ikon dari news-fallback */
+.berita-index-card-image.news-fallback {
+    min-height: 160px;
+}
+.berita-index-card-image.news-fallback .news-fallback-icon {
+    font-size: 2.4rem;
+}
+
+.berita-index-card-body {
+    flex: 1 1 0;
+    padding: 1rem 1.15rem;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.berita-index-card-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+}
+
+.berita-index-card-date {
+    font-size: 0.78rem;
+    color: var(--bs-secondary-color, #6c757d);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.berita-index-card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--rk-primary, #1a2035);
+    line-height: 1.35;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.berita-index-card-title a {
+    color: inherit;
+    text-decoration: none;
+}
+.berita-index-card-title a:hover,
+.berita-index-card-title a:focus-visible {
+    color: var(--rk-accent, #0d6efd);
+}
+
+.berita-index-card-excerpt {
+    font-size: 0.88rem;
+    color: var(--bs-body-color, #495057);
+    line-height: 1.55;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.berita-index-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: auto;
+    padding-top: 0.4rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    font-size: 0.76rem;
+    color: var(--bs-secondary-color, #6c757d);
+}
+
+.berita-index-card-author {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--rk-primary, #1a2035);
+    font-weight: 500;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.berita-index-card-stats {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.85rem;
+    flex-shrink: 0;
+}
+.berita-index-card-stats span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+/* Visited link styling (konsisten dgn pattern existing) */
+.berita-index-card-title a:visited {
+    color: var(--rk-link-visited, #6f4a9c);
+}
+
+/* Empty state */
+.berita-index-empty {
+    background: #fff;
+    border: 1px dashed var(--bs-border-color, #d8dee6);
+    border-radius: 12px;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    color: var(--bs-secondary-color, #6c757d);
+}
+.berita-index-empty > i {
+    font-size: 2.6rem;
+    color: rgba(13, 110, 253, 0.45);
+    margin-bottom: 0.6rem;
+    display: block;
+}
+
+/* Mobile: stack vertikal — thumbnail full-width 16:9 */
+@media (max-width: 575.98px) {
+    .berita-index-card {
+        flex-direction: column;
+    }
+    .berita-index-card-image {
+        flex: none;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16/9;
+    }
+    .berita-index-card-image.news-fallback {
+        min-height: 180px;
+    }
+    .berita-index-card-body {
+        padding: 0.9rem 1rem;
+    }
+    .berita-index-card-title {
+        font-size: 1rem;
+    }
+    .berita-index-card-footer {
+        font-size: 0.72rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .berita-index-card,
+    .berita-index-card-image img {
+        transition: none !important;
+    }
+    .berita-index-card:hover {
+        transform: none !important;
+    }
+    .berita-index-card:hover .berita-index-card-image img {
+        transform: none !important;
+    }
+}
+
+/* ============================================================
+   COMMUNITY CARD (Halaman Pengabdian Masyarakat) — Visual Storytelling
+   Pattern: image dominant 16:9 + location banner overlay + impact badge
+   Vibe: community impact, geographic, visual-first, story-driven
+   Color identity: brand palette (var(--rk-primary) navy + var(--rk-accent) biru)
+   ============================================================ */
+.community-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.community-card {
+    background: #fff;
+    border: 1px solid var(--bs-border-color, #e5e7eb);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.18s ease, box-shadow 0.2s ease;
+}
+
+@media (hover: hover) {
+    .community-card:hover {
+        border-color: var(--rk-accent, #0d6efd);
+        box-shadow: 0 8px 22px rgba(13, 110, 253, 0.10);
+    }
+}
+.community-card:focus-within {
+    border-color: var(--rk-accent, #0d6efd);
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.18);
+}
+
+/* Image section — dominant 16:9 dengan overlay gradient.
+   Untuk record tanpa foto (placeholder), pakai ratio lebih flat (21:9)
+   supaya tidak terkesan 'banner kosong' yang dominan. */
+.community-card .community-image {
+    position: relative;
+    aspect-ratio: 16/9;
+    width: 100%;
+    background: #f0f2f5;
+    overflow: hidden;
+}
+.community-card .community-image:has(.community-image-placeholder) {
+    aspect-ratio: 21/9;
+}
+.community-card .community-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.community-card .community-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 70%, rgba(0,0,0,0.4) 100%);
+    pointer-events: none;
+}
+
+/* Location banner — top-left, prominent identity */
+.community-card .community-location {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--rk-primary, #1a2035);
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.4rem 0.85rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+    max-width: calc(100% - 28px);
+}
+.community-card .community-location i { font-size: 0.95em; }
+
+.community-card .community-image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(26, 32, 53, 0.25);
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, #eef2f7, #dde4ec);
+}
+
+.community-card .community-body { padding: 1.25rem 1.5rem 1.4rem; }
+
+.community-card .community-tags {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-bottom: 0.6rem;
+}
+
+.community-card .community-tag {
+    background: rgba(13, 110, 253, 0.08);
+    color: var(--rk-accent, #0d6efd);
+    font-size: 0.72rem;
+    font-weight: 500;
+    padding: 0.18rem 0.6rem;
+    border-radius: 100px;
+    border: 1px solid rgba(13, 110, 253, 0.18);
+}
+
+/* Tag varian Prodi — navy solid (konsisten dgn teaching-tag--prodi) */
+.community-card .community-tag--prodi {
+    background: var(--rk-primary, #1a2035);
+    color: #fff;
+    border-color: var(--rk-primary, #1a2035);
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+.community-card .community-tag--prodi i { font-size: 0.85em; }
+
+.community-card .community-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--rk-primary, #1a2035);
+    line-height: 1.35;
+    margin: 0 0 0.65rem;
+}
+.community-card .community-title a { color: inherit; text-decoration: none; }
+.community-card .community-title a:hover,
+.community-card .community-title a:focus-visible { color: var(--rk-accent, #0d6efd); }
+
+.community-card .community-excerpt {
+    font-size: 0.95rem;
+    color: var(--bs-body-color, #495057);
+    line-height: 1.65;
+    margin: 0 0 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.community-card .community-meta {
+    font-size: 0.8rem;
+    color: var(--bs-secondary-color, #6c757d);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    margin: 0 0 1rem;
+}
+.community-card .community-meta-item { display: inline-flex; align-items: center; gap: 0.3rem; }
+.community-card .community-meta-item.author { color: var(--rk-primary, #1a2035); font-weight: 500; }
+
+/* CTA button — filled accent biru, emphasis kuat (beda dari teaching-cta link) */
+.community-card .community-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: var(--rk-accent, #0d6efd);
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.55rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.15s ease;
+}
+.community-card .community-cta:hover,
+.community-card .community-cta:focus-visible {
+    background: var(--rk-primary, #1a2035);
+    color: #fff;
+}
+
+/* Mobile adjustments */
+@media (max-width: 575.98px) {
+    .community-card .community-location {
+        font-size: 0.72rem;
+        padding: 0.3rem 0.65rem;
+    }
+    .community-card .community-body { padding: 1rem 1.15rem 1.2rem; }
+    .community-card .community-title { font-size: 1.1rem; }
+}
+
+.community-empty {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    border: 2px dashed var(--bs-border-color, #e5e7eb);
+    border-radius: 10px;
+    color: var(--bs-secondary-color, #6c757d);
+}
+.community-empty i {
+    display: block;
+    font-size: 2.5rem;
+    opacity: 0.4;
+    margin-bottom: 0.75rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .community-card { transition: none !important; }
+}
+
+/* ============================================================
+   ARTICLE DETAIL PAGE — Editorial Magazine Pattern
+   Pattern inspired: ITB Berita, UI Berita, Medium, Substack
+   Single-column readable width (max 760px) + hero image dominant
+   ============================================================ */
+
+/* Breadcrumb compact (pengganti page-title heading besar) */
+.article-breadcrumb {
+    background: #fafbfc;
+    border-bottom: 1px solid var(--bs-border-color, #e5e7eb);
+    padding: 0.65rem 0;
+    font-size: 0.82rem;
+}
+.article-breadcrumb ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: var(--bs-secondary-color, #6c757d);
+}
+.article-breadcrumb li { display: inline-flex; align-items: center; gap: 0.4rem; }
+.article-breadcrumb li + li::before {
+    content: "›";
+    color: var(--bs-secondary-color, #adb5bd);
+    font-weight: 400;
+}
+.article-breadcrumb a {
+    color: var(--bs-secondary-color, #6c757d);
+    text-decoration: none;
+}
+.article-breadcrumb a:hover,
+.article-breadcrumb a:focus-visible { color: var(--rk-accent, #0d6efd); text-decoration: underline; }
+.article-breadcrumb .current { color: var(--rk-primary, #1a2035); font-weight: 500; }
+
+/* Hero image — grid child di dalam article-layout (bukan wrapper terpisah).
+   Keputusan desain: hero masuk grid row 1, sidebar span row 1-2, sehingga
+   sidebar sticky aktif dari scroll=0 (natural top sidebar = top article-layout,
+   bukan setelah hero). Trade-off: hero lebih narrow di desktop (840px vs 1200px). */
+.article-hero-figure {
+    margin: 0;
+    border: 1px solid var(--bs-border-color, #e9ecef);
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    max-height: min(560px, 70vh);
+    padding: 10px;
+    background: #f8fafc;
+    box-shadow: 0 4px 16px rgba(26, 32, 53, 0.06);
+}
+.article-hero-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+}
+
+/* Article wrapper — section background + padding.
+   JANGAN tambah transform, filter, perspective, will-change, atau data-aos
+   ke element ini — semuanya membuat containing block baru yang MEMATIKAN
+   position:sticky pada .article-sidebar (sidebar jadi scroll dengan wrapper
+   alih-alih dengan viewport). Lihat komentar di .article-wrapper di Blade view. */
+.article-wrapper {
+    padding: 1.15rem 0 2.4rem;
+}
+
+/* Article layout — grid parent.
+   Mobile default: single column, konten max-width 760px (readable).
+   Desktop ≥992px: 2-column, hero row 1 + content row 2 (left col), sidebar span 1-2 (right col). */
+.article-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+    max-width: 760px;
+    margin: 0 auto;
+}
+@media (min-width: 992px) {
+    .article-layout {
+        grid-template-columns: minmax(0, 1fr) 320px;
+        gap: 0.85rem 2rem; /* row-gap column-gap */
+        max-width: 1200px;
+    }
+    /* Hero & inner auto-place di column 1. Kalau hero tidak ada,
+       inner auto-mundur ke row 1 (tanpa gap kosong di atas). */
+    .article-hero-figure { grid-column: 1; }
+    .article-inner { grid-column: 1; }
+}
+
+/* Article inner (konten utama) — prevent grid overflow dari long URLs/code */
+.article-inner {
+    min-width: 0;
+}
+
+/* Tags row — kategori + prodi */
+.article-inner .article-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 0.7rem;
+}
+.article-inner .article-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: rgba(13, 110, 253, 0.08);
+    color: var(--rk-accent, #0d6efd);
+    font-size: 0.78rem;
+    font-weight: 500;
+    padding: 0.28rem 0.75rem;
+    border-radius: 100px;
+    border: 1px solid rgba(13, 110, 253, 0.18);
+    letter-spacing: 0.2px;
+}
+/* Variant: prodi badge (navy solid — konsisten dgn teaching/community) */
+.article-inner .article-tag--prodi {
+    background: var(--rk-primary, #1a2035);
+    color: #fff;
+    border-color: var(--rk-primary, #1a2035);
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+.article-inner .article-tag--prodi i { font-size: 0.9em; }
+/* Variant: kategori pengabdian (accent biru subtle) */
+.article-inner .article-tag--community {
+    background: rgba(13, 110, 253, 0.10);
+    color: var(--rk-accent, #0d6efd);
+    border-color: rgba(13, 110, 253, 0.20);
+}
+
+/* Title — besar, berat, readable */
+.article-title {
+    font-size: clamp(1.65rem, 2vw + 0.9rem, 2.25rem);
+    font-weight: 700;
+    color: var(--rk-primary, #1a2035);
+    line-height: 1.28;
+    letter-spacing: 0;
+    margin: 0 0 0.65rem;
+}
+
+/* Lead paragraph — larger, muted, formal (no italic biar tetap corporate) */
+.article-lead {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--bs-secondary-color, #495057);
+    margin: 0 0 1rem;
+    font-weight: 400;
+}
+
+/* Meta bar — author + tanggal + reading time */
+.article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.75rem 0;
+    border-top: 1px solid var(--bs-border-color, #e5e7eb);
+    border-bottom: 1px solid var(--bs-border-color, #e5e7eb);
+    margin-bottom: 1.25rem;
+}
+
+/* Author mini (inline di meta bar) */
+.article-author-mini {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+/* Avatar — circle inisial (no foto real) */
+.author-avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--rk-primary, #1a2035);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.88rem;
+    letter-spacing: 0.5px;
+    flex-shrink: 0;
+}
+.author-avatar--large {
+    width: 72px;
+    height: 72px;
+    font-size: 1.5rem;
+}
+
+.article-author-mini .author-info {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3;
+}
+.article-author-mini .author-info strong {
+    color: var(--rk-primary, #1a2035);
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+.article-author-mini .author-info small {
+    color: var(--bs-secondary-color, #6c757d);
+    font-size: 0.78rem;
+}
+
+.article-meta-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: var(--bs-secondary-color, #6c757d);
+}
+.article-meta-info .meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+.article-meta-info .meta-item i { font-size: 0.95em; }
+
+/* Article body typography — readable prose */
+.article-body {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #2c3e50;
+}
+.article-body p { margin-bottom: 1.15rem; }
+.article-body p:first-of-type::first-letter {
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: var(--rk-primary, #1a2035);
+    float: left;
+    line-height: 0.9;
+    margin: 0.35rem 0.6rem 0 0;
+    padding-top: 0.2rem;
+}
+.article-body h2, .article-body h3, .article-body h4 {
+    color: var(--rk-primary, #1a2035);
+    margin-top: 2rem;
+    margin-bottom: 0.85rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+.article-body h2 { font-size: 1.6rem; }
+.article-body h3 { font-size: 1.3rem; }
+.article-body h4 { font-size: 1.1rem; }
+.article-body ul, .article-body ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1.15rem;
+}
+.article-body ul li, .article-body ol li { margin-bottom: 0.4rem; }
+.article-body a {
+    color: var(--rk-accent, #0d6efd);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+}
+.article-body a:hover { text-decoration-thickness: 2px; }
+.article-body blockquote {
+    border-left: 4px solid var(--rk-accent, #0d6efd);
+    background: #f8f9fa;
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: #495057;
+    border-radius: 0 8px 8px 0;
+}
+.article-body img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+.article-body strong { color: var(--rk-primary, #1a2035); font-weight: 700; }
+.article-body code {
+    background: #f1f3f5;
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.9em;
+    color: #e83e8c;
+}
+
+/* Share section */
+.article-share {
+    margin-top: 1.8rem;
+    padding: 1.25rem;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border: 1px solid var(--bs-border-color, #e9ecef);
+}
+.article-share-label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--rk-primary, #1a2035);
+    margin: 0 0 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.article-share-label i { color: var(--rk-accent, #0d6efd); }
+.article-share-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+.share-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 1rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    color: #fff;
+}
+.share-btn i { font-size: 1rem; }
+@media (hover: hover) {
+    .share-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+        color: #fff;
+    }
+}
+.share-btn:focus-visible {
+    outline: 2px solid var(--rk-accent, #0d6efd);
+    outline-offset: 2px;
+}
+.share-btn--whatsapp { background: #25d366; }
+.share-btn--whatsapp:hover { background: #1ebe5a; color: #fff; }
+.share-btn--facebook { background: #1877f2; }
+.share-btn--facebook:hover { background: #155ec2; color: #fff; }
+.share-btn--twitter { background: #14171a; }
+.share-btn--twitter:hover { background: #000; color: #fff; }
+.share-btn--linkedin { background: #0a66c2; }
+.share-btn--linkedin:hover { background: #084b8f; color: #fff; }
+.share-btn--copy {
+    background: #fff;
+    color: var(--rk-primary, #1a2035);
+    border: 1px solid var(--bs-border-color, #dee2e6);
+}
+.share-btn--copy:hover {
+    background: #f1f3f5;
+    color: var(--rk-primary, #1a2035);
+    border-color: var(--rk-accent, #0d6efd);
+}
+.copy-feedback-popover {
+    position: fixed;
+    z-index: 1085;
+    display: inline-flex;
+    align-items: center;
+    max-width: min(220px, calc(100vw - 24px));
+    padding: 0.45rem 0.7rem;
+    border-radius: 8px;
+    background: var(--rk-primary, #1a2035);
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(26, 32, 53, 0.18);
+    font-size: 0.82rem;
+    font-weight: 600;
+    line-height: 1.25;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, 4px) scale(0.98);
+    transition: opacity 0.14s ease, transform 0.14s ease;
+}
+.copy-feedback-popover::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    background: inherit;
+    transform: translateX(-50%) rotate(45deg);
+}
+.copy-feedback-popover[data-placement="top"] {
+    transform: translate(-50%, calc(-100% - 4px)) scale(0.98);
+}
+.copy-feedback-popover[data-placement="top"]::after {
+    bottom: -4px;
+}
+.copy-feedback-popover[data-placement="bottom"]::after {
+    top: -4px;
+}
+.copy-feedback-popover.is-visible {
+    opacity: 1;
+    transform: translate(-50%, 4px) scale(1);
+}
+.copy-feedback-popover[data-placement="top"].is-visible {
+    transform: translate(-50%, calc(-100% - 4px)) scale(1);
+}
+
+/* Author Box (below artikel) */
+.article-author-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    background: linear-gradient(135deg, #f8f9fa, #fff);
+    border: 1px solid var(--bs-border-color, #e9ecef);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+.author-box-info { flex: 1; }
+.author-box-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--bs-secondary-color, #6c757d);
+    margin: 0 0 0.2rem;
+    font-weight: 600;
+}
+.author-box-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--rk-primary, #1a2035);
+    margin: 0 0 0.5rem;
+}
+.author-box-bio {
+    font-size: 0.92rem;
+    color: var(--bs-secondary-color, #495057);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Prev / Next Navigation */
+.article-nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+.article-nav-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    padding: 1.15rem 1.25rem;
+    background: #fff;
+    border: 1px solid var(--bs-border-color, #e9ecef);
+    border-radius: 10px;
+    text-decoration: none;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+.article-nav-item--empty { visibility: hidden; }
+@media (hover: hover) {
+    .article-nav-item:not(.article-nav-item--empty):hover {
+        border-color: var(--rk-accent, #0d6efd);
+        box-shadow: 0 4px 14px rgba(13, 110, 253, 0.1);
+        transform: translateY(-2px);
+    }
+}
+.article-nav-item:focus-visible {
+    outline: 2px solid var(--rk-accent, #0d6efd);
+    outline-offset: 2px;
+}
+.article-nav-item--next { text-align: right; }
+.article-nav-item .nav-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--bs-secondary-color, #6c757d);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+.article-nav-item--next .nav-label { justify-content: flex-end; }
+.article-nav-item .nav-title {
+    color: var(--rk-primary, #1a2035);
+    font-weight: 600;
+    font-size: 0.95rem;
+    line-height: 1.45;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.article-nav-item:hover .nav-title { color: var(--rk-accent, #0d6efd); }
+
+/* Related Section (full-width subtle bg) */
+.article-related {
+    background: #f8f9fa;
+    padding: 2.5rem 0;
+    margin-top: 1.25rem;
+}
+.article-related-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1.35rem;
+}
+.article-related-header h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--rk-primary, #1a2035);
+    margin: 0;
+}
+.article-related-link {
+    color: var(--rk-accent, #0d6efd);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+.article-related-link:hover { text-decoration: underline; }
+
+.related-card {
+    background: #fff;
+    border: 1px solid var(--bs-border-color, #e9ecef);
+    border-radius: 10px;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+@media (hover: hover) {
+    .related-card:hover {
+        border-color: var(--rk-accent, #0d6efd);
+        box-shadow: 0 6px 18px rgba(13, 110, 253, 0.08);
+        transform: translateY(-2px);
+    }
+}
+.related-card-image {
+    display: block;
+    aspect-ratio: 16 / 9;
+    background: #f0f2f5;
+    overflow: hidden;
+    text-decoration: none;
+}
+.related-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.related-card-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #adb5bd;
+    font-size: 2rem;
+    background: linear-gradient(135deg, #eef2f7, #dde4ec);
+}
+.related-card-body {
+    padding: 1rem 1.15rem 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+}
+.related-card-tag {
+    background: rgba(13, 110, 253, 0.08);
+    color: var(--rk-accent, #0d6efd);
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0.15rem 0.55rem;
+    border-radius: 100px;
+    border: 1px solid rgba(13, 110, 253, 0.18);
+    align-self: flex-start;
+}
+.related-card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--rk-primary, #1a2035);
+    margin: 0;
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.related-card-title a { color: inherit; text-decoration: none; }
+.related-card-title a:hover { color: var(--rk-accent, #0d6efd); }
+.related-card-meta {
+    font-size: 0.78rem;
+    color: var(--bs-secondary-color, #6c757d);
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+/* ============================================================
+   ARTICLE SIDEBAR — 4 Sections (Author, Kategori, Terkini, Tags)
+   Desktop: sticky kanan 320px. Mobile: stack bawah content.
+   ============================================================ */
+.article-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+@media (min-width: 992px) {
+    .article-sidebar {
+        /* TIDAK PAKAI position:sticky atau position:fixed.
+           Sidebar adalah regular grid child — scroll BARENG konten secara natural.
+           Saat user scroll jauh ke bawah, sidebar ikut scroll away (hilang dari
+           viewport), meninggalkan area kosong di kanan. User SUDAH menerima
+           trade-off ini ("biarin ada bagian kosong bawahnya"). */
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        align-self: start;
+    }
+}
+
+.sidebar-section {
+    background: #fff;
+    border: 1px solid var(--bs-border-color, #e9ecef);
+    border-radius: 12px;
+    padding: 1rem 1.15rem;
+    box-shadow: 0 4px 16px rgba(26, 32, 53, 0.04);
+}
+
+.sidebar-heading {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--rk-primary, #1a2035);
+    margin: 0 0 0.7rem;
+    padding-bottom: 0.45rem;
+    border-bottom: 2px solid var(--rk-accent, #0d6efd);
+    display: inline-block;
+    line-height: 1.3;
+}
+
+/* Section 1: Tentang Penulis */
+.sidebar-author {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+}
+.sidebar-author-info {
+    flex: 1;
+    min-width: 0;
+}
+.sidebar-author-info strong {
+    display: block;
+    color: var(--rk-primary, #1a2035);
+    font-size: 0.92rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 0.15rem;
+}
+.sidebar-author-info p {
+    margin: 0;
+    font-size: 0.78rem;
+    color: var(--bs-secondary-color, #6c757d);
+    line-height: 1.5;
+}
+
+/* Section 2: Tentang Kategori */
+.sidebar-text {
+    font-size: 0.85rem;
+    line-height: 1.55;
+    color: var(--bs-secondary-color, #495057);
+    margin: 0;
+}
+
+/* Section 3: Berita Terkini */
+.sidebar-news-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.sidebar-news-item {
+    display: flex;
+    gap: 0.75rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+.sidebar-news-item:first-child { padding-top: 0; }
+.sidebar-news-item:last-child { padding-bottom: 0; border-bottom: none; }
+
+.sidebar-news-thumb {
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    border-radius: 6px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #eef2f7, #dde4ec);
+    display: block;
+}
+.sidebar-news-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.2s ease;
+}
+@media (hover: hover) {
+    .sidebar-news-thumb:hover img { transform: scale(1.06); }
+}
+.sidebar-news-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #adb5bd;
+    font-size: 1.5rem;
+}
+
+.sidebar-news-content {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+.sidebar-news-content a {
+    color: var(--rk-primary, #1a2035);
+    text-decoration: none;
+    font-size: 0.86rem;
+    font-weight: 600;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    transition: color 0.15s ease;
+}
+.sidebar-news-content a:hover { color: var(--rk-accent, #0d6efd); }
+.sidebar-news-date {
+    font-size: 0.72rem;
+    color: var(--bs-secondary-color, #6c757d);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+/* Section 4: Tag Populer */
+.sidebar-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+.sidebar-tag {
+    background: rgba(13, 110, 253, 0.08);
+    color: var(--rk-accent, #0d6efd);
+    font-size: 0.78rem;
+    font-weight: 500;
+    padding: 0.3rem 0.75rem;
+    border-radius: 100px;
+    border: 1px solid rgba(13, 110, 253, 0.18);
+    text-decoration: none;
+    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    min-height: 30px; /* touch target baseline */
+    display: inline-flex;
+    align-items: center;
+}
+@media (hover: hover) {
+    .sidebar-tag:hover {
+        background: var(--rk-accent, #0d6efd);
+        color: #fff;
+        border-color: var(--rk-accent, #0d6efd);
+    }
+}
+.sidebar-tag:focus-visible {
+    outline: 2px solid var(--rk-accent, #0d6efd);
+    outline-offset: 2px;
+}
+
+/* Section 5: Kategori Filter (sidebar /berita)
+   Clickable filter list dgn active state + badge count.
+   Pattern editorial portal berita kampus (IPB, UGM). */
+.sidebar-category-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+.sidebar-category-list li {
+    margin: 0;
+}
+.sidebar-category-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.55rem 0.75rem;
+    border-radius: 8px;
+    color: var(--bs-body-color, #495057);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    border: 1px solid transparent;
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    min-height: 40px;
+}
+@media (hover: hover) {
+    .sidebar-category-item:hover {
+        background: rgba(13, 110, 253, 0.06);
+        color: var(--rk-accent, #0d6efd);
+    }
+}
+.sidebar-category-item:focus-visible {
+    outline: 2px solid var(--rk-accent, #0d6efd);
+    outline-offset: 2px;
+}
+.sidebar-category-item--active {
+    background: var(--rk-accent, #0d6efd);
+    color: #fff !important;
+    font-weight: 600;
+}
+.sidebar-category-item--active:hover {
+    background: var(--rk-accent, #0d6efd);
+    color: #fff !important;
+}
+.sidebar-category-count {
+    background: rgba(0, 0, 0, 0.06);
+    color: var(--bs-secondary-color, #6c757d);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.1rem 0.5rem;
+    border-radius: 100px;
+    min-width: 28px;
+    text-align: center;
+    flex-shrink: 0;
+}
+.sidebar-category-item--active .sidebar-category-count {
+    background: rgba(255, 255, 255, 0.22);
+    color: #fff;
+}
+
+/* Section 6: Tautan Cepat (sidebar /berita)
+   Utility link list: icon-box | title+subtitle | arrow.
+   Hover: subtle biru highlight + arrow translate. */
+.sidebar-quicklinks {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+.sidebar-quicklinks li {
+    margin: 0;
+}
+.sidebar-quicklink {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.65rem 0.75rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--bs-body-color, #495057);
+    border: 1px solid transparent;
+    transition: background 0.15s ease, border-color 0.15s ease;
+    min-height: 56px;
+}
+@media (hover: hover) {
+    .sidebar-quicklink:hover {
+        background: rgba(13, 110, 253, 0.05);
+        border-color: rgba(13, 110, 253, 0.16);
+    }
+    .sidebar-quicklink:hover .sidebar-quicklink-icon {
+        background: var(--rk-accent, #0d6efd);
+        color: #fff;
+    }
+    .sidebar-quicklink:hover .sidebar-quicklink-arrow {
+        color: var(--rk-accent, #0d6efd);
+        transform: translateX(2px);
+    }
+}
+.sidebar-quicklink:focus-visible {
+    outline: 2px solid var(--rk-accent, #0d6efd);
+    outline-offset: 2px;
+}
+.sidebar-quicklink-icon {
+    flex: 0 0 38px;
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    background: rgba(13, 110, 253, 0.08);
+    color: var(--rk-accent, #0d6efd);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+.sidebar-quicklink-text {
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    line-height: 1.3;
+}
+.sidebar-quicklink-text strong {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--rk-primary, #1a2035);
+}
+.sidebar-quicklink-text small {
+    font-size: 0.74rem;
+    color: var(--bs-secondary-color, #6c757d);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.sidebar-quicklink-arrow {
+    flex: 0 0 auto;
+    color: var(--bs-secondary-color, #adb5bd);
+    font-size: 0.85rem;
+    transition: transform 0.15s ease, color 0.15s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sidebar-quicklink,
+    .sidebar-quicklink-icon,
+    .sidebar-quicklink-arrow {
+        transition: none !important;
+    }
+    .sidebar-quicklink:hover .sidebar-quicklink-arrow {
+        transform: none !important;
+    }
+}
+
+/* ============================================================
+   ARTICLE — Mobile Responsive
+   ============================================================ */
+@media (max-width: 767.98px) {
+    .article-hero-figure { aspect-ratio: 16 / 9; border-radius: 12px; max-height: 60vh; padding: 6px; }
+    .article-wrapper { padding: 0.85rem 0 1.75rem; }
+    .article-title { font-size: 1.55rem; letter-spacing: 0; }
+    .article-lead { font-size: 1rem; line-height: 1.55; }
+
+    .article-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.7rem;
+        padding: 0.75rem 0;
+        margin-bottom: 1.1rem;
+    }
+    .article-meta-info { gap: 0.75rem; }
+
+    .article-body { font-size: 1rem; line-height: 1.75; }
+    .article-body p:first-of-type::first-letter {
+        font-size: 2.6rem;
+        margin-right: 0.45rem;
+    }
+    .article-body h2 { font-size: 1.35rem; }
+    .article-body h3 { font-size: 1.15rem; }
+
+    .article-share { margin-top: 1.5rem; padding: 1rem; }
+    .article-share-buttons { gap: 0.5rem; }
+    .share-btn {
+        flex: 1 1 calc(50% - 0.3rem);
+        justify-content: center;
+        padding: 0.55rem 0.75rem;
+        font-size: 0.82rem;
+    }
+
+    .article-author-box {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1.25rem;
+    }
+
+    .article-nav {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+    .article-nav-item--next { text-align: left; }
+    .article-nav-item--next .nav-label { justify-content: flex-start; }
+    .article-nav-item--empty { display: none; }
+
+    .article-related { padding: 1.75rem 0; margin-top: 1rem; }
+    .article-related-header h2 { font-size: 1.3rem; }
+
+    /* Sidebar — mobile: padding lebih compact + tag touch target ≥36px */
+    .article-sidebar { gap: 0.85rem; }
+    .sidebar-section { padding: 1rem 1.1rem; }
+    .sidebar-heading { font-size: 0.9rem; margin-bottom: 0.7rem; }
+    .sidebar-tag {
+        min-height: 36px;
+        padding: 0.4rem 0.85rem;
+        font-size: 0.8rem;
+    }
+    .sidebar-news-thumb { width: 64px; height: 64px; }
+    .sidebar-news-content a { font-size: 0.9rem; }
+}
+
+/* Reduced motion compliance */
+@media (prefers-reduced-motion: reduce) {
+    .share-btn,
+    .article-nav-item,
+    .related-card,
+    .sidebar-news-thumb img,
+    .sidebar-tag { transition: none !important; }
+    .share-btn:hover,
+    .article-nav-item:hover,
+    .related-card:hover { transform: none !important; }
+    .sidebar-news-thumb:hover img { transform: none !important; }
+}
+
+/* ============================================================
+   BLOG CONTENT TYPOGRAPHY (Legacy — dipakai di halaman lain)
+   ============================================================ */
+.blog-content h2,
+.blog-content h3,
+.blog-content h4 {
+    color: var(--rk-primary);
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.blog-content ul,
+.blog-content ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.blog-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+/* ============================================================
+   FEATURED ITEMS (Homepage)
+   ============================================================ */
+.featured .featured-item {
+    border-radius: var(--rk-radius);
+    transition: transform 0.3s ease;
+}
+
+.featured .featured-item:hover {
+    transform: translateY(-4px);
+}
+
+/* ============================================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================================ */
+@media (max-width: 992px) {
+    .page-title .heading {
+        padding: 50px 0 30px;
+    }
+
+    .page-title .heading h1 {
+        font-size: 1.6rem;
+    }
+
+    .stats-item .purecounter {
+        font-size: 2rem;
+    }
+
+    .news-featured-media {
+        min-height: 260px;
+    }
+
+    .news-list-panel {
+        padding: 20px;
+    }
+
+    .cta-politani {
+        padding: 50px 0;
+        text-align: center;
+    }
+
+    .cta-politani .logo-politani {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 20px;
+    }
+
+    .cta-politani h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .page-title .heading {
+        padding: 40px 0 25px;
+    }
+
+    .page-title .heading h1 {
+        font-size: 1.3rem;
+    }
+
+    .sidebar-section {
+        margin-top: 30px;
+    }
+
+    .stats-item .stats-icon {
+        width: 56px;
+        height: 56px;
+    }
+
+    .stats-item .stats-icon i {
+        font-size: 1.4rem;
+    }
+
+    .stats-item .purecounter {
+        font-size: 1.6rem;
+    }
+
+    .news-featured-media {
+        min-height: 220px;
+    }
+
+    .news-featured-body {
+        padding: 22px;
+    }
+
+    .news-featured-body h3 {
+        font-size: 1.15rem;
+    }
+
+    .news-list-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .news-list-card {
+        grid-template-columns: 1fr;
+    }
+
+    .news-list-image {
+        min-height: 180px;
+    }
+}
+
+/* ============================================================
+   BERITA — A11Y & MICRO-INTERACTIONS (Opus refinement)
+   ============================================================ */
+.news-featured-card,
+.news-list-card,
+.news-list-panel {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.news-featured-card:hover,
+.news-list-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 38px rgba(27, 46, 75, 0.16);
+}
+
+.news-featured-media {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.news-featured-flag {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 2;
+    background: var(--rk-accent, #0d6efd);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 6px 12px;
+    border-radius: 999px;
+    text-transform: uppercase;
+    box-shadow: 0 8px 18px rgba(13, 110, 253, 0.28);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.news-featured-flag .bi {
+    font-size: 0.78rem;
+}
+
+.news-list-kicker {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--rk-accent, #0d6efd);
+    margin-bottom: 4px;
+}
+
+.news-list-archive {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--rk-primary, #1a2035);
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.news-list-archive:hover,
+.news-list-archive:focus-visible {
+    color: var(--rk-accent, #0d6efd);
+    transform: translateX(2px);
+}
+
+/* Focus-visible: keyboard accessibility */
+.news-featured-card a:focus-visible,
+.news-list-card a:focus-visible,
+.news-list-archive:focus-visible,
+.btn-selengkapnya:focus-visible {
+    outline: 3px solid var(--rk-accent, #0d6efd);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* Hormati preferensi user yang mengurangi animasi */
+@media (prefers-reduced-motion: reduce) {
+    .news-featured-card,
+    .news-list-card,
+    .news-list-panel,
+    .news-featured-media img,
+    .news-list-image img,
+    .news-list-archive {
+        transition: none !important;
+        transform: none !important;
+    }
+
+    .news-featured-card:hover,
+    .news-list-card:hover {
+        transform: none !important;
+    }
+}
+
+/* ============================================================
+   ARTICLE VISITED STATE
+   ------------------------------------------------------------
+   Konvensi portal berita kampus (Kompas/Detik/IPB/UGM):
+   artikel yang sudah dibaca DIREDAM, bukan ditonjolkan.
+   Diaktifkan via JS dengan menambah atribut data-visited="true"
+   pada elemen ber-data-article-link.
+   ============================================================ */
+
+/* Title pada kartu yang sudah dikunjungi: cukup muted (abu-abu).
+   Sidebar berita-terbaru sekarang pakai CSS native :visited
+   (lihat .sidebar-news-content a:visited di section visited rules). */
+[data-article-link][data-visited="true"] .news-featured-body h3 a,
+[data-article-link][data-visited="true"] .news-list-content h4 a {
+    color: #7b8490 !important;
+}
+
+[data-article-link][data-visited="true"] .news-featured-body p,
+[data-article-link][data-visited="true"] .news-list-content p {
+    color: #8f98a3 !important;
+}
+
+/* Kartu tetap relative untuk overlay lain di section berita. */
+.news-featured-card,
+.news-list-card {
+    position: relative;
+}
+
+/* ============================================================
+   CATEGORY BADGE COLORS
+   ------------------------------------------------------------
+   Warna distinct per kategori → membantu scan-ability,
+   mengikuti konvensi portal berita kampus modern.
+   Mapping CSS class dihasilkan via Kategori::color_class accessor.
+   ============================================================ */
+.news-category--akademik   { background: #0d6efd; color: #ffffff; }
+.news-category--kegiatan   { background: #f59f00; color: #1a1d23; }
+.news-category--prestasi   { background: #16a34a; color: #ffffff; }
+.news-category--pengumuman { background: #dc2626; color: #ffffff; }
+.news-category--kerjasama  { background: #7c3aed; color: #ffffff; }
+.news-category--penelitian { background: #0891b2; color: #ffffff; }
+.news-category--umum       { background: #6b7280; color: #ffffff; }
+
+/* ============================================================
+   FEATURED IMAGE OVERLAY (gradient untuk legibility badge)
+   ============================================================ */
+.news-featured-media {
+    position: relative;
+    overflow: hidden;
+}
+
+.news-featured-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.45) 0%,
+        rgba(0, 0, 0, 0) 35%,
+        rgba(0, 0, 0, 0) 65%,
+        rgba(0, 0, 0, 0.25) 100%
+    );
+    z-index: 1;
+}
+
+.news-featured-flag {
+    position: relative;
+    z-index: 2;
+}
+
+/* ============================================================
+   FALLBACK IMAGE (no gambar uploaded)
+   Menggunakan gradient + ikon kategori, bukan stock photo generik.
+   ============================================================ */
+.news-fallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+    min-height: 180px;
+}
+
+.news-fallback img {
+    display: none;
+}
+
+.news-fallback-icon {
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.92);
+    z-index: 1;
+}
+
+.news-fallback--akademik   { background: linear-gradient(135deg, #1e3a8a 0%, #0d6efd 100%); }
+.news-fallback--kegiatan   { background: linear-gradient(135deg, #b45309 0%, #f59f00 100%); }
+.news-fallback--prestasi   { background: linear-gradient(135deg, #14532d 0%, #16a34a 100%); }
+.news-fallback--pengumuman { background: linear-gradient(135deg, #7f1d1d 0%, #dc2626 100%); }
+.news-fallback--kerjasama  { background: linear-gradient(135deg, #4c1d95 0%, #7c3aed 100%); }
+.news-fallback--penelitian { background: linear-gradient(135deg, #164e63 0%, #0891b2 100%); }
+.news-fallback--umum       { background: linear-gradient(135deg, #1f2937 0%, #6b7280 100%); }
+
+.news-list-image.news-fallback {
+    min-height: 100%;
+}
+
+.news-list-image.news-fallback .news-fallback-icon {
+    font-size: 1.6rem;
+}
+
+/* ============================================================
+   READING TIME + AUTHOR BYLINE
+   ============================================================ */
+.news-reading-time {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--rk-text-light);
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+.news-featured-excerpt {
+    color: var(--rk-text-secondary, #525c69);
+    line-height: 1.65;
+}
+
+.news-featured-footer {
+    margin-top: auto;
+    padding-top: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.news-author {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--rk-text-light);
+    font-size: 0.85rem;
+}
+
+.news-author strong {
+    color: var(--rk-text, #212529);
+}
+
+/* ============================================================
+   FEATURED CTA — tombol primary solid yang menonjol
+   ============================================================ */
+.news-featured-cta {
+    border-radius: 999px;
+    padding: 8px 18px;
+    font-weight: 600;
+    box-shadow: 0 6px 16px rgba(13, 110, 253, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.news-featured-cta:hover,
+.news-featured-cta:focus-visible {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 22px rgba(13, 110, 253, 0.32);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .news-featured-cta {
+        transition: none;
+    }
+    .news-featured-cta:hover,
+    .news-featured-cta:focus-visible {
+        transform: none;
+    }
+}
+
+/* Pastikan body featured pakai flex column agar footer ke bawah */
+.news-featured-body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Visibility wrappers — fallback CSS untuk dark mode (kalau ada) */
+[data-coreui-theme="dark"] .news-featured-footer {
+    border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ============================================================
+   BLOG CONTENT — Inline Media Styling
+   ============================================================
+   Konten berita di-render sebagai HTML mentah dari TinyMCE.
+   Pastikan gambar/embed yang di-insert admin tampil rapi & responsive. */
+.blog-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin: 1.25rem 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* TinyMCE image with caption -> akan dibungkus <figure> */
+.blog-content figure {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.blog-content figure img {
+    margin: 0 auto 0.5rem;
+}
+
+.blog-content figcaption {
+    font-size: 0.875rem;
+    color: #6c757d;
+    font-style: italic;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+/* Alignment dari TinyMCE (class img-fluid / float) */
+.blog-content img.float-left,
+.blog-content figure.float-left {
+    float: left;
+    margin-right: 1.25rem;
+    margin-bottom: 0.75rem;
+    max-width: 50%;
+}
+
+.blog-content img.float-right,
+.blog-content figure.float-right {
+    float: right;
+    margin-left: 1.25rem;
+    margin-bottom: 0.75rem;
+    max-width: 50%;
+}
+
+/* Mobile: float-left/right balik jadi block agar tidak menyempit */
+@media (max-width: 576px) {
+    .blog-content img.float-left,
+    .blog-content img.float-right,
+    .blog-content figure.float-left,
+    .blog-content figure.float-right {
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+        display: block;
+    }
+}
+
+/* Embed video / iframe (YouTube, dll) */
+.blog-content iframe {
+    max-width: 100%;
+    border-radius: 6px;
+    margin: 1.25rem 0;
+}
+
+/* Tabel dalam konten berita */
+.blog-content table {
+    width: 100%;
+    margin: 1.25rem 0;
+    border-collapse: collapse;
+}
+
+.blog-content table th,
+.blog-content table td {
+    padding: 0.6rem 0.85rem;
+    border: 1px solid #dee2e6;
+}
+
+.blog-content table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+/* Blockquote */
+.blog-content blockquote {
+    border-left: 4px solid var(--rk-accent, #ffc107);
+    padding: 0.75rem 1rem;
+    margin: 1.25rem 0;
+    color: #495057;
+    background-color: #f8f9fa;
+    border-radius: 0 4px 4px 0;
+}
+
+/* ============================================================
+   A11Y: FOCUS-VISIBLE PARITY FOR HOVER STATES
+   Keyboard user (Tab navigation) WAJIB dapat feedback visual
+   yang sama dengan mouse user. Block ini me-replicate semua
+   :hover effect ke :focus-visible.
+   Lihat .agents/rules/a11y.md & responsive-mobile.md §8.
+   ============================================================ */
+
+/* Universal focus indicator (fallback untuk semua interactive) */
+*:focus-visible {
+    outline: 2px solid var(--rk-accent, #0d6efd);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* === Navigation menu === */
+.header .branding .navmenu a:focus-visible,
+.header .navmenu a:focus-visible,
+.navmenu a:focus-visible {
+    color: var(--rk-accent) !important;
+    outline: none;
+}
+
+.header .navmenu .dropdown ul a:focus-visible {
+    color: var(--rk-accent) !important;
+    background-color: rgba(27, 108, 176, 0.06) !important;
+    outline: none;
+}
+
+/* === Sidebar berita-terbaru === */
+.sidebar-news-thumb:focus-visible,
+.sidebar-news-content a:focus-visible,
+.sidebar-lihat-semua:focus-visible {
+    text-decoration: none;
+}
+
+/* === Generic cards === */
+.card:focus-visible,
+.prodi-card:focus-visible,
+.featured .featured-item:focus-visible,
+.news-featured-card:focus-visible,
+.news-list-card:focus-visible {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    outline: 2px solid var(--rk-accent, #0d6efd);
+    outline-offset: 4px;
+}
+
+/* News card image zoom (replicate hover behavior) */
+.news-featured-card:focus-visible .news-featured-media img,
+.news-list-card:focus-visible .news-list-image img {
+    transform: scale(1.05);
+}
+
+/* News card title links */
+.news-featured-body h3 a:focus-visible,
+.news-list-content h4 a:focus-visible {
+    color: var(--rk-accent);
+}
+
+/* === Buttons & CTA === */
+.berita-section .btn-selengkapnya:focus-visible,
+.cta-politani .btn-cta:focus-visible,
+.cta-politani .btn-cta-primary:focus-visible,
+.news-featured-cta:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* === Footer === */
+.footer .footer-links ul a:focus-visible,
+footer .social-links a:focus-visible {
+    color: var(--rk-accent) !important;
+    text-decoration: underline;
+    outline-offset: 4px;
+}
+
+/* === Tables === */
+.table-styled-wrapper .table tbody tr:focus-within {
+    background-color: rgba(27, 108, 176, 0.04);
+}
+
+/* === Info items (kontak page) === */
+.info-item p a:focus-visible {
+    color: var(--rk-accent);
+    text-decoration: underline;
+}
+
+/* === News archive (sidebar) === */
+.news-list-archive:focus-visible {
+    background-color: rgba(27, 108, 176, 0.06);
+    outline: none;
+}
+
+/* ============================================================
+   TOUCH TARGET MINIMUM SIZE (WCAG 2.5.5 — Level AA)
+   Tombol & link interaktif minimal 44x44 px di mobile.
+   ============================================================ */
+
+@media (max-width: 991.98px) {
+    /* Tombol & link interaktif umum (bukan navmenu — Eterna sudah handle sendiri) */
+    .btn,
+    .nav-link,
+    .footer .footer-links ul a,
+    footer .social-links a,
+    .sidebar-news-content a,
+    .sidebar-lihat-semua,
+    .pagination .page-link {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    /* Icon-only buttons */
+    .btn-icon,
+    .navbar-toggler {
+        min-width: 44px;
+        min-height: 44px;
+    }
+}
+
+/* ============================================================
+   PREVENT IOS AUTO-ZOOM (input font-size minimal 16px)
+   ============================================================ */
+
+@media (max-width: 575.98px) {
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="url"],
+    input[type="search"],
+    input[type="number"],
+    input[type="password"],
+    input[type="date"],
+    select,
+    textarea {
+        font-size: 16px;
+    }
+}
+
+
+/* ============================================================
+   SIDE DRAWER (Bootstrap Offcanvas) — Mobile Menu
+   ------------------------------------------------------------
+   Modern mobile navigation pattern dengan Bootstrap 5 offcanvas:
+   - Slide dari kiri, full-height
+   - Header (logo + close), Search bar, Menu items dengan icon,
+     Footer (info kontak + social media)
+   - WCAG 2.5.5 touch targets (≥48px)
+   - Keyboard a11y native (Bootstrap handles focus trap, escape)
+   - Hide Eterna's default mobile menu di breakpoint mobile
+   Compliance: .agents/rules/responsive-mobile.md §3, §6, §14
+                .agents/rules/a11y.md §3, §5
+                .agents/rules/desain-ui.md (formal, konsisten)
+   ============================================================ */
+
+@media (max-width: 1199.98px) {
+
+    /* ===== Hide Eterna Default Mobile Menu (digantikan Offcanvas) ===== */
+    /* Eterna's .navmenu ul + .mobile-nav-toggle disembunyikan di mobile.
+       Desktop tetap pakai Eterna's .navmenu (terlihat normal di >=1200px). */
+    .navmenu > ul {
+        display: none !important;
+    }
+
+    .mobile-nav-toggle {
+        display: none !important;
+    }
+
+    /* Reset .navmenu jadi inline biasa (tidak fixed overlay) */
+    .navmenu {
+        position: static !important;
+        background: transparent !important;
+    }
+
+    /* ===== Hamburger Trigger (Bootstrap Offcanvas Toggler) ===== */
+    .mobile-drawer-trigger {
+        min-width: 44px;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        border: none;
+        border-radius: 8px;
+        font-size: 28px;
+        color: var(--rk-primary, #1a2035);
+        cursor: pointer;
+        transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .mobile-drawer-trigger:hover {
+        background-color: rgba(27, 108, 176, 0.1);
+        color: var(--rk-accent, #1b6cb0);
+    }
+
+    .mobile-drawer-trigger:focus-visible {
+        outline: 2px solid var(--rk-accent, #1b6cb0);
+        outline-offset: 2px;
+        background-color: rgba(27, 108, 176, 0.1);
+    }
+}
+
+/* ============================================================
+   OFFCANVAS DRAWER STYLING — Apply di semua viewport
+   (Drawer hanya muncul kalau d-xl-none aktif: <1200px)
+   ============================================================ */
+
+/* ===== Drawer Container ===== */
+.mobile-drawer.offcanvas {
+    width: 88%;
+    max-width: 340px;
+    background-color: #ffffff;
+    border-right: none;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== Drawer Header (Logo + Close) ===== */
+.mobile-drawer .drawer-header {
+    padding: 16px 20px;
+    background: linear-gradient(135deg, var(--rk-primary, #1a2035) 0%, var(--rk-primary-light, #2a3554) 100%);
+    color: #ffffff;
+    border-bottom: 3px solid var(--rk-accent, #1b6cb0);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.mobile-drawer .drawer-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #ffffff;
+    flex: 1;
+    min-width: 0;
+}
+
+.mobile-drawer .drawer-brand img {
+    width: 40px;
+    height: 40px;
+    background-color: #ffffff;
+    padding: 4px;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.mobile-drawer .drawer-brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+    min-width: 0;
+}
+
+.mobile-drawer .drawer-brand-text strong {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.mobile-drawer .drawer-brand-text small {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.75);
+    font-weight: 400;
+}
+
+.mobile-drawer .drawer-close {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 10px;
+    margin: 0;
+    opacity: 1;
+    filter: invert(1) brightness(2);
+    transition: background-color 0.2s ease;
+    flex-shrink: 0;
+}
+
+.mobile-drawer .drawer-close:hover,
+.mobile-drawer .drawer-close:focus-visible {
+    background-color: rgba(255, 255, 255, 0.25);
+    box-shadow: none;
+}
+
+.mobile-drawer .drawer-close:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+}
+
+/* ===== Drawer Search Bar ===== */
+.mobile-drawer .drawer-search {
+    padding: 14px 16px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    flex-shrink: 0;
+}
+
+.mobile-drawer .drawer-search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.mobile-drawer .drawer-search-icon {
+    position: absolute;
+    left: 14px;
+    color: #6c757d;
+    font-size: 16px;
+    pointer-events: none;
+}
+
+.mobile-drawer .drawer-search-input {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 14px 10px 40px;
+    font-size: 14px;
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 22px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mobile-drawer .drawer-search-input:focus {
+    border-color: var(--rk-accent, #1b6cb0);
+    box-shadow: 0 0 0 3px rgba(27, 108, 176, 0.15);
+    outline: none;
+}
+
+/* ===== Drawer Body (Menu Items) ===== */
+.mobile-drawer .drawer-body {
+    padding: 8px 0;
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Custom scrollbar */
+.mobile-drawer .drawer-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.mobile-drawer .drawer-body::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
+}
+
+.mobile-drawer .drawer-menu {
+    margin: 0;
+    padding: 0;
+}
+
+/* Item separator dihapus per UX feedback — visually cleaner tanpa garis pemisah.
+   Hover & active state sudah cukup memberi affordance antar item. */
+
+/* ===== Menu Items (Top-Level) ===== */
+/* Performa: tidak animate padding-left (layout trigger expensive)
+   Reset native button defaults supaya <button.drawer-toggle> dan <a.drawer-item>
+   memiliki box metrics identik (margin, font, line-height) — mencegah
+   perbedaan tinggi visual antara item dropdown vs flat. */
+.mobile-drawer .drawer-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    margin: 0;
+    min-height: 52px;
+    padding: 12px 20px;
+    background: transparent;
+    border: none;
+    color: #2c3e50;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.4;
+    text-align: left;
+    text-decoration: none;
+    appearance: none;
+    -webkit-appearance: none;
+    transition: background-color 0.15s ease, color 0.15s ease;
+    cursor: pointer;
+}
+
+.mobile-drawer .drawer-item-icon {
+    font-size: 20px;
+    color: #6c757d;
+    width: 24px;
+    text-align: center;
+    transition: color 0.2s ease;
+    flex-shrink: 0;
+}
+
+.mobile-drawer .drawer-item > span {
+    flex: 1;
+    min-width: 0;
+}
+
+.mobile-drawer .drawer-toggle-icon {
+    font-size: 14px;
+    color: #6c757d;
+    transition: transform 0.3s ease, color 0.2s ease;
+    flex-shrink: 0;
+}
+
+/* Hover & Focus */
+.mobile-drawer .drawer-item:hover,
+.mobile-drawer .drawer-item:focus-visible {
+    background-color: rgba(27, 108, 176, 0.06);
+    color: var(--rk-accent, #1b6cb0);
+}
+
+.mobile-drawer .drawer-item:hover .drawer-item-icon,
+.mobile-drawer .drawer-item:focus-visible .drawer-item-icon {
+    color: var(--rk-accent, #1b6cb0);
+}
+
+.mobile-drawer .drawer-item:focus-visible {
+    outline: 2px solid var(--rk-accent, #1b6cb0);
+    outline-offset: -2px;
+}
+
+/* Active state */
+.mobile-drawer .drawer-item.active {
+    background-color: rgba(27, 108, 176, 0.08);
+    color: var(--rk-accent, #1b6cb0);
+    border-left: 4px solid var(--rk-accent, #1b6cb0);
+    padding-left: 16px;
+    font-weight: 600;
+}
+
+.mobile-drawer .drawer-item.active .drawer-item-icon {
+    color: var(--rk-accent, #1b6cb0);
+}
+
+/* Dropdown opened state */
+.mobile-drawer .drawer-toggle[aria-expanded="true"] .drawer-toggle-icon {
+    transform: rotate(180deg);
+    color: var(--rk-accent, #1b6cb0);
+}
+
+/* ===== Sub-Menu (CSS Grid Accordion) =====
+   Pattern: grid-template-rows: 0fr -> 1fr (animatable in modern browsers).
+   Keuntungan vs Bootstrap collapse height animation:
+     - Browser dapat optimisasi single grid track interpolation
+     - Tidak butuh JS measure scrollHeight tiap frame
+     - `contain: layout paint` mengisolasi reflow ke wrapper
+     - Inner <ul> overflow:hidden + min-height:0 -> konten ter-clip mulus
+   Lihat .agents/rules/performance-css.md (anti-pattern: animate height). */
+.mobile-drawer .drawer-submenu-wrap {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Isolasi layout & paint dari rest of the drawer/body */
+    contain: layout paint;
+    /* Pastikan wrapper benar-benar 0 height saat collapsed */
+    margin: 0;
+    padding: 0;
+    border: 0;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.mobile-drawer .drawer-submenu-wrap.is-open {
+    grid-template-rows: 1fr;
+}
+
+.mobile-drawer .drawer-submenu-wrap > .drawer-submenu {
+    /* Required for grid-row 0fr->1fr trick to clip content cleanly */
+    overflow: hidden;
+    min-height: 0;
+    background-color: rgba(0, 0, 0, 0.02);
+    margin: 0;
+    /* PENTING: padding 0 saat collapsed.
+       Dengan box-sizing: border-box, padding tetap "ngotot" memakan ruang
+       walau grid track 0fr — ini yang bikin gap residual antar item dropdown.
+       Padding di-restore via .is-open di bawah. */
+    padding: 0;
+    transition: padding 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-drawer .drawer-submenu-wrap.is-open > .drawer-submenu {
+    padding: 4px 0;
+}
+
+/* Fallback: jika browser belum support animasi grid-template-rows,
+   tampilkan instan saat is-open (tanpa animasi) tapi tetap berfungsi. */
+@supports not (grid-template-rows: 1fr) {
+    .mobile-drawer .drawer-submenu-wrap {
+        display: block;
+        height: 0;
+        overflow: hidden;
+        transition: none;
+    }
+    .mobile-drawer .drawer-submenu-wrap.is-open {
+        height: auto;
+    }
+}
+
+.mobile-drawer .drawer-subitem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    padding: 10px 20px 10px 56px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #495057;
+    text-decoration: none;
+    /* Hanya animate background-color & color (GPU-friendly, no layout) */
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.mobile-drawer .drawer-subitem:hover,
+.mobile-drawer .drawer-subitem:focus-visible {
+    background-color: rgba(27, 108, 176, 0.08);
+    color: var(--rk-accent, #1b6cb0);
+}
+
+.mobile-drawer .drawer-subitem:focus-visible {
+    outline: 2px solid var(--rk-accent, #1b6cb0);
+    outline-offset: -2px;
+}
+
+.mobile-drawer .drawer-subitem.active {
+    background-color: rgba(27, 108, 176, 0.12);
+    color: var(--rk-accent, #1b6cb0);
+    font-weight: 600;
+}
+
+/* External link icon (.box-arrow-up-right) */
+.mobile-drawer .drawer-subitem .bi-box-arrow-up-right {
+    font-size: 11px;
+    opacity: 0.5;
+    margin-left: auto;
+}
+
+/* ===== Drawer Footer (Info Kontak + Social) ===== */
+.mobile-drawer .drawer-footer {
+    padding: 16px 20px 20px;
+    background-color: #f8f9fa;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    flex-shrink: 0;
+}
+
+.mobile-drawer .drawer-footer-title {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #6c757d;
+    margin-bottom: 12px;
+}
+
+.mobile-drawer .drawer-contact-list {
+    margin: 0 0 14px 0;
+    padding: 0;
+}
+
+.mobile-drawer .drawer-contact-list li {
+    margin-bottom: 6px;
+}
+
+.mobile-drawer .drawer-contact {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 36px;
+    font-size: 13px;
+    color: #495057;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    word-break: break-word;
+}
+
+.mobile-drawer a.drawer-contact:hover,
+.mobile-drawer a.drawer-contact:focus-visible {
+    color: var(--rk-accent, #1b6cb0);
+}
+
+.mobile-drawer a.drawer-contact:focus-visible {
+    outline: 2px solid var(--rk-accent, #1b6cb0);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+.mobile-drawer .drawer-contact i {
+    font-size: 14px;
+    color: var(--rk-accent, #1b6cb0);
+    flex-shrink: 0;
+}
+
+/* Social Media */
+.mobile-drawer .drawer-social {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.mobile-drawer .drawer-social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    color: var(--rk-accent, #1b6cb0);
+    text-decoration: none;
+    font-size: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.mobile-drawer .drawer-social a:hover,
+.mobile-drawer .drawer-social a:focus-visible {
+    background-color: var(--rk-accent, #1b6cb0);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.mobile-drawer .drawer-social a:focus-visible {
+    outline: 2px solid var(--rk-accent, #1b6cb0);
+    outline-offset: 2px;
+}
+
+/* ===== Hide scroll-top button when drawer open ===== */
+/* Pakai class body.drawer-open (di-toggle via Bootstrap event) — lebih cepat dari :has() */
+body.drawer-open .scroll-top {
+    display: none !important;
+}
+
+/* ============================================================
+   DRAWER ANIMATIONS — Simplified & Performant
+   ------------------------------------------------------------
+   Prinsip:
+   - SINGLE animation per element (no stagger chains)
+   - Hardware-accelerated (transform/opacity only, no height/blur)
+   - Coordinated timing (drawer slides → content fades in once)
+   - Honors prefers-reduced-motion (a11y)
+   ============================================================ */
+
+/* ===== Drawer Slide-In dengan Material Design Easing ===== */
+/* Single transform animation — content tidak di-animate (avoid blank flash) */
+.mobile-drawer.offcanvas-start {
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+/* ===== Backdrop Fade (no blur — GPU heavy di HP) ===== */
+.offcanvas-backdrop {
+    transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.offcanvas-backdrop.show {
+    opacity: 0.5;
+}
+
+/* ===== Hamburger Trigger Tap Feedback ===== */
+.mobile-drawer-trigger {
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
+}
+
+.mobile-drawer-trigger:active {
+    transform: scale(0.92);
+}
+
+/* ===== Drawer Item Tap Feedback ===== */
+.mobile-drawer .drawer-item:active {
+    background-color: rgba(27, 108, 176, 0.12);
+}
+
+.mobile-drawer .drawer-item-icon {
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+/* Subtle scale on hover (desktop only via @media hover) */
+@media (hover: hover) {
+    .mobile-drawer .drawer-item:hover .drawer-item-icon {
+        transform: scale(1.1);
+    }
+}
+
+/* ===== Close Button Spin on Hover ===== */
+.mobile-drawer .drawer-close {
+    transition: background-color 0.2s ease, transform 0.3s ease;
+}
+
+@media (hover: hover) {
+    .mobile-drawer .drawer-close:hover {
+        transform: rotate(90deg);
+    }
+}
+
+/* ===== Submenu Chevron Smooth Rotate ===== */
+/* CSS Grid wrapper (.drawer-submenu-wrap) menangani animasi expand/collapse
+   submenu via grid-template-rows. Di sini hanya animate chevron rotation. */
+.mobile-drawer .drawer-toggle-icon {
+    transition: transform 0.3s ease, color 0.2s ease;
+}
+
+/* ===== Reduced Motion Support (a11y) ===== */
+@media (prefers-reduced-motion: reduce) {
+    .mobile-drawer.offcanvas-start,
+    .offcanvas-backdrop,
+    .mobile-drawer-trigger,
+    .mobile-drawer .drawer-item-icon,
+    .mobile-drawer .drawer-close,
+    .mobile-drawer .drawer-toggle-icon,
+    .mobile-drawer .drawer-submenu-wrap {
+        animation: none !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ===== Profil Page — Cover Image ===== */
+/* Cover untuk halaman Tentang / Visi-Misi / Struktur.
+   - Mobile-first: 16:9 (proporsi natural untuk foto dokumentasi)
+   - Desktop (≥992px): 21:9 cinematic karena card-body lebih lebar
+   - aspect-ratio menjaga rasio & mencegah CLS (layout shift) sebelum image load. */
+.profil-cover {
+    margin: 0;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background-color: #f1f3f5;
+    /* Subtle divider line antara cover & card-body */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.profil-cover-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+@media (min-width: 992px) {
+    .profil-cover {
+        aspect-ratio: 21 / 9;
+    }
+}
+
+/* ===== Profil Page — Meta Bar ===== */
+/* Item meta (URL + tanggal update) pakai flex-wrap supaya kalau item kedua
+   tidak muat satu baris, dia turun ke baris baru sebagai SATU KESATUAN
+   (bukan word-wrap dalam kolom yang sempit). */
+.profil-meta {
+    column-gap: 1rem;
+    row-gap: 0.25rem;
+}
+
+.profil-meta-item {
+    /* Cegah icon + teks ter-pisah saat wrapping */
+    white-space: nowrap;
+}
+
+@media (max-width: 380px) {
+    /* Di layar sangat sempit, biarkan teks panjang wrap di dalam item */
+    .profil-meta-item {
+        white-space: normal;
+    }
+}
+
+/* ===== Tabel Struktur Organisasi (dirender via TinyMCE template) =====
+   Class `.tabel-struktur-organisasi` di-inject lewat custom toolbar button
+   "Template Struktur" di tinymce-init. Style ini memastikan:
+   - Desktop: tabel rapi dengan header branded
+   - Mobile: stacked card responsive (table layout pecah jadi block) */
+.tabel-struktur-organisasi {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.95rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.tabel-struktur-organisasi thead th {
+    background: var(--rk-primary, #002147);
+    color: #fff;
+    padding: 0.85rem 0.75rem;
+    text-align: center;
+    font-weight: 600;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    vertical-align: middle;
+}
+
+.tabel-struktur-organisasi td {
+    padding: 1rem 0.75rem;
+    border: 1px solid #dee2e6;
+    vertical-align: middle;
+}
+
+.tabel-struktur-organisasi tbody tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+/* Kolom No: kecil & center */
+.tabel-struktur-organisasi td:first-child {
+    text-align: center;
+    font-weight: 600;
+    color: #6c757d;
+    width: 60px;
+}
+
+/* Kolom Foto: center, image kotak konsisten */
+.tabel-struktur-organisasi td:nth-child(2) {
+    text-align: center;
+    width: 140px;
+}
+
+.tabel-struktur-organisasi td img {
+    max-width: 110px;
+    max-height: 140px;
+    width: auto;
+    height: auto;
+    border-radius: 6px;
+    object-fit: cover;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* Mobile: tabel pecah jadi stacked card per pejabat */
+@media (max-width: 768px) {
+    .tabel-struktur-organisasi,
+    .tabel-struktur-organisasi tbody,
+    .tabel-struktur-organisasi tr,
+    .tabel-struktur-organisasi td {
+        display: block;
+        width: 100%;
+    }
+
+    .tabel-struktur-organisasi thead {
+        display: none;
+    }
+
+    .tabel-struktur-organisasi tr {
+        margin-bottom: 1rem;
+        border: 1px solid #dee2e6;
+        border-radius: 8px;
+        padding: 0.5rem;
+        background: #fff;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+    }
+
+    .tabel-struktur-organisasi tbody tr:nth-child(even) {
+        background: #fff;
+    }
+
+    .tabel-struktur-organisasi td {
+        border: none;
+        border-bottom: 1px solid #f1f3f5;
+        padding: 0.5rem 0.25rem;
+        text-align: left !important;
+        width: auto !important;
+    }
+
+    .tabel-struktur-organisasi td:last-child {
+        border-bottom: none;
+    }
+
+    /* Kolom No mobile: jadikan badge kecil di pojok kiri atas */
+    .tabel-struktur-organisasi td:first-child {
+        display: inline-block;
+        background: var(--rk-primary, #002147);
+        color: #fff;
+        border-radius: 50%;
+        width: 28px;
+        height: 28px;
+        line-height: 28px;
+        text-align: center;
+        font-size: 0.85rem;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Kolom Foto mobile: lebih besar untuk visibility */
+    .tabel-struktur-organisasi td:nth-child(2) {
+        text-align: center;
+    }
+
+    .tabel-struktur-organisasi td img {
+        max-width: 140px;
+        max-height: 180px;
+    }
+}
+
+/* ============================================================
+   VISITED LINK STYLING — Content list & sidebar
+   ============================================================
+   Apply ke link teks di halaman list (Berita, Pengabdian, Pengajaran),
+   sidebar artikel terkini, dan link unduh akreditasi.
+   User yang sudah klik akan lihat warna link berubah ke muted
+   gray-navy supaya gampang skip artikel yang sudah dibaca.
+
+   TIDAK diterapkan ke: nav menu, CTA buttons, breadcrumb, footer
+   (karena akan merusak emphasis / call-to-action).
+
+   CATATAN: browser membatasi properti yang bisa dipakai di :visited
+   (cuma color, background-color, border-color, outline-color, fill,
+   stroke) untuk mencegah CSS history sniffing. Jangan pakai
+   text-decoration, font-weight, transform, dll.
+   ============================================================ */
+:root {
+    --rk-link-visited: #5a6373;
+}
+
+/* Berita list (home page partials & list cards) — judul artikel.
+   Scope `.blog-page` untuk halaman /berita yang pakai Bootstrap card pattern. */
+.news-featured-body h3 a:visited,
+.news-list-content h4 a:visited,
+.blog-page .card-title a:visited {
+    color: var(--rk-link-visited);
+}
+
+/* Pengabdian community card — judul */
+.community-card .community-title a:visited {
+    color: var(--rk-link-visited);
+}
+
+/* Pengajaran teaching card — judul */
+.teaching-card .teaching-title a:visited {
+    color: var(--rk-link-visited);
+}
+
+/* Kegiatan event card — judul (stretched-link) */
+.event-card .event-title a:visited {
+    color: var(--rk-link-visited);
+}
+
+/* Sidebar Berita Terkini (single source of truth) — judul link di dalam
+   .sidebar-news-content. Dipakai di partial sidebar-artikel.blade.php,
+   berita.show, dan kegiatan-show. */
+.sidebar-news-content a:visited {
+    color: var(--rk-link-visited);
+}
+
+/* Related card section (Berita Terkait / Kegiatan Lainnya) — judul artikel.
+   Section full-width di bawah article detail dengan grid card 3 kolom. */
+.related-card-title a:visited {
+    color: var(--rk-link-visited);
+}
+
+/* Article navigation Prev/Next — bottom of article detail.
+   Kedua link ke artikel/kegiatan sebelumnya & berikutnya juga track visited. */
+.article-nav-item:visited {
+    color: var(--rk-link-visited);
+}
+
+/* Akreditasi — tautan sertifikat (desktop & mobile) */
+.akreditasi-link--sertifikat:visited,
+.akreditasi-card-action:visited {
+    color: var(--rk-link-visited);
+}
+
+/* Akreditasi — tautan verifikasi BAN-PT/PDDikti
+   (dipertahankan indigo subtle agar identitas eksternal tetap kelihatan,
+   tapi sedikit dimuted) */
+.akreditasi-link--verifikasi:visited,
+.akreditasi-card-action--verifikasi:visited {
+    color: #847cce;
+}

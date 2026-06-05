@@ -1,0 +1,10 @@
+<?php
+
+/**
+ * Pesan autentikasi dalam Bahasa Indonesia.
+ */
+return [
+    'failed' => 'Email atau password yang Anda masukkan salah.',
+    'password' => 'Password yang diberikan salah.',
+    'throttle' => 'Terlalu banyak percobaan login. Silakan coba lagi dalam :seconds detik.',
+];

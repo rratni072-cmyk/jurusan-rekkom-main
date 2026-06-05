@@ -1,0 +1,74 @@
+/*
+|--------------------------------------------------------------------------
+| Custom CoreUI Styles (dari style.scss template)
+|--------------------------------------------------------------------------
+| Styles tambahan untuk admin panel yang di-export dari
+| src/scss/style.scss template CoreUI.
+| File ini melengkapi coreui.min.css
+|--------------------------------------------------------------------------
+*/
+
+body {
+  background-color: var(--cui-tertiary-bg);
+}
+
+.wrapper {
+  width: 100%;
+  padding-inline: var(--cui-sidebar-occupy-start, 0) var(--cui-sidebar-occupy-end, 0);
+  will-change: auto;
+  transition: padding .15s;
+}
+
+.header > .container-fluid,
+.sidebar-header {
+  min-height: calc(4rem + 1px);
+}
+
+.sidebar-brand-full {
+  margin-left: 3px;
+}
+
+.sidebar-header .nav-underline-border {
+  --cui-nav-underline-border-link-padding-x: 1rem;
+  --cui-nav-underline-border-gap: 0;
+}
+
+.sidebar-header .nav-link {
+  display: flex;
+  align-items: center;
+  min-height: calc(4rem + 1px);
+}
+
+.sidebar-toggler {
+  margin-inline-start: auto;
+}
+
+.sidebar-narrow .sidebar-toggler,
+.sidebar-narrow-unfoldable:not(:hover) .sidebar-toggler {
+  margin-inline-end: auto;
+}
+
+.header > .container-fluid + .container-fluid {
+  min-height: 3rem;
+}
+
+.footer {
+  min-height: calc(3rem + 1px);
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-coreui-theme="auto"] body {
+    background-color: var(--cui-dark-bg-subtle);
+  }
+  [data-coreui-theme="auto"] .footer {
+    --cui-footer-bg: var(--cui-body-bg);
+  }
+}
+
+[data-coreui-theme="dark"] body {
+  background-color: var(--cui-dark-bg-subtle);
+}
+
+[data-coreui-theme="dark"] .footer {
+  --cui-footer-bg: var(--cui-body-bg);
+}

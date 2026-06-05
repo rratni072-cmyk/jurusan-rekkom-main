@@ -1,0 +1,16 @@
+{
+    "$schema": "https://www.schemastore.org/package.json",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "node ./node_modules/vite/bin/vite.js build",
+        "dev": "node ./node_modules/vite/bin/vite.js"
+    },
+    "devDependencies": {
+        "axios": "^1.11.0",
+        "concurrently": "^9.0.1",
+        "laravel-vite-plugin": "^2.0.0",
+        "tinymce": "^7.9.2",
+        "vite": "^7.0.7"
+    }
+}
