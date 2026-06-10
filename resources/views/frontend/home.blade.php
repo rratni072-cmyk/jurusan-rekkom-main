@@ -15,12 +15,12 @@
 
 @section('content')
 
-    {{-- H1 untuk SEO (sr-only) — topik halaman beranda.
-         Visual pakai carousel hero di bawah; h1 ini khusus untuk screen reader & search engine. --}}
+    {{-- H1 untuk SEO (sr-only) --}}
     <h1 class="visually-hidden">Jurusan Rekayasa dan Komputer — Politeknik Pertanian Negeri Samarinda</h1>
 
     {{-- ==================== HERO SECTION ==================== --}}
     <section id="hero" class="hero section">
+
         <div id="hero-carousel" class="carousel slide carousel-fade"
              data-bs-ride="carousel"
              data-bs-interval="5000"
@@ -34,8 +34,10 @@
                     <div class="carousel-container">
                         <h2>{{ $slider->judul }}</h2>
                         <p>{{ $slider->deskripsi }}</p>
-                        @if($slider->tombol_teks && $slider->tombol_url)
-                            <a href="{{ $slider->tombol_url }}" class="btn-get-started">{{ $slider->tombol_teks }}</a>
+                        @if(!empty($slider->tombol_teks))
+                            <a href="{{ $slider->tombol_url ?? '#' }}" class="btn-get-started">
+                                {{ $slider->tombol_teks }}
+                            </a>
                         @endif
                     </div>
                 </div>
@@ -73,7 +75,9 @@
             <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
                 <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
             </a>
+
         </div>
+        {{-- /.carousel #hero-carousel --}}
 
         {{-- Featured Highlights --}}
         <div class="featured container">
@@ -101,7 +105,10 @@
                 </div>
             </div>
         </div>
+        {{-- /.featured --}}
+
     </section>
+    {{-- /.hero section --}}
 
     {{-- ==================== PROGRAM STUDI SECTION ==================== --}}
     <section id="prodi" class="section prodi-section">
@@ -115,11 +122,8 @@
                 <div class="row g-4 justify-content-center">
                     @foreach($prodiList as $prodi)
                         @php
-                            // Card prodi sekarang fokus akreditasi: klik selalu ke halaman
-                            // akreditasi dengan anchor ke baris prodi yang dipilih.
                             $cardHref = route('profil.akreditasi') . '#prodi-' . \Illuminate\Support\Str::slug($prodi->nama);
                         @endphp
-
                         <div class="col-lg-4 col-md-6">
                             <a href="{{ $cardHref }}"
                                class="prodi-card"
@@ -130,17 +134,14 @@
                                         <span class="prodi-jenjang-badge">{{ $prodi->jenjang }}</span>
                                     @endif
                                 </div>
-
                                 <div class="prodi-card-body">
                                     <h3 class="prodi-card-title">{{ $prodi->nama }}</h3>
-
                                     @if($prodi->akreditasi)
                                         <span class="prodi-akreditasi {{ $prodi->getAkreditasiBadgeClass() }}">
                                             <i class="bi bi-award-fill"></i>
                                             Akreditasi: {{ $prodi->akreditasi }}
                                         </span>
                                     @endif
-
                                     <span class="prodi-card-cta">
                                         <i class="bi bi-arrow-right-circle"></i> Lihat Detail Akreditasi
                                     </span>
@@ -157,6 +158,7 @@
             @endif
         </div>
     </section>
+    {{-- /.prodi section --}}
 
     {{-- ==================== BERITA SECTION ==================== --}}
     @include('frontend.partials.berita._section', ['beritas' => $beritas])
@@ -185,5 +187,6 @@
             </div>
         </div>
     </section>
+    {{-- /.cta section --}}
 
 @endsection
