@@ -26,6 +26,37 @@
 }
 
 /* ============================================================
+   HERO CAROUSEL — Full Height Fix
+   ============================================================ */
+.hero .carousel,
+#hero-carousel,
+#hero-carousel .carousel-inner,
+#hero-carousel .carousel-item {
+    min-height: 100vh;
+    height: 100vh;
+}
+
+#hero-carousel .carousel-item img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top; /* supaya bagian atas gambar tetap kelihatan */
+}
+
+/* Mobile: sedikit lebih kecil agar konten tetap terbaca */
+@media (max-width: 768px) {
+    .hero .carousel,
+    #hero-carousel,
+    #hero-carousel .carousel-inner,
+    #hero-carousel .carousel-item {
+        min-height: 70vh;
+        height: 70vh;
+    }
+}
+
+/* ============================================================
    TOPBAR BIRU TUA
    ============================================================ */
 .header .topbar.dark-background {
